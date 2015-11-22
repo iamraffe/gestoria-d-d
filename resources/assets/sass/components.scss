@@ -1,0 +1,16 @@
+.custom-btn{
+  @extend .btn;
+  font-family: 'Gotham';
+  font-size: 12px;
+  font-weight: bold;
+  padding: 15px 30px;
+  border-radius: 0;
+}
+
+.custom-btn-primary{
+  // @extend .btn-primary;
+  background-color: $maroon;
+  color: white;
+
+}
+

@@ -1,12 +1,13 @@
 // Import bootstrap specific stuff
 
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_mixins.scss";
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss";
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_grid.scss";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss";
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_grid.scss";
 
 // Import variables & font-faces
 @import "variables.scss";
 @import "font-faces.scss";
+@import "components.scss";
 
 // Import page specific styles
 @import "pages/_home.scss";
@@ -21,6 +22,23 @@ html, body{
 
 header{
   background: $light-gray;
-  height: 250px;
+  height: 175px;
   width: 100%;
+  
+  .header-call-to-action{
+    height: 175px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .row{
+      flex: 1;
+    }
+    span{
+      font-family: Gotham;
+      font-weight: bold;
+      color: $maroon;
+      display: block;
+    }
+  }
 }
