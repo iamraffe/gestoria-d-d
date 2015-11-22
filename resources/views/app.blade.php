@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>gestoría D&amp;D</title>
+        <title>Gestor&iacute;a D&amp;D</title>
         <link rel="stylesheet" href="{{ elixir('css/app.css') }}">
     </head>
     <body>
         <section id="main">
-            <header class="container-fluid">
-                <div class="row">
-                    @render('partials._nav')
-                </div>
-            </header>
+            @include('partials._header')
             <div class="container">
                 @yield('content')
             </div>
             <footer class="container-fluid">
                 <div class="row">
-                    @render('partials._footer')
+                    @include('partials._footer')
                 </div>
             </footer>    
         </section>

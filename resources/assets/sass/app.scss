@@ -4,5 +4,23 @@
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss";
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_grid.scss";
 
+// Import variables & font-faces
+@import "variables.scss";
+@import "font-faces.scss";
+
 // Import page specific styles
 @import "pages/_home.scss";
+
+// Import partials specific styles
+@import "partials/_nav.scss";
+
+html, body{
+  margin: 0;
+  padding: 0;
+}
+
+header{
+  background: $light-gray;
+  height: 250px;
+  width: 100%;
+}
