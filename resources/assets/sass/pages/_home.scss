@@ -1,0 +1,35 @@
+aside.tagline{
+  h1{
+    font-size: 22px;
+    color: $font-color;
+    font-family: Gotham;
+    font-weight: 300;
+    margin: 75px auto;
+    @extend .text-center;
+  }
+}
+
+.panel.home-panels{
+  height: 400px;
+  position: relative;
+  
+  .panel-body{
+    p{
+      font-weight: 200;
+      font-size: 18px;
+      margin-top: 25px;
+      &.price{
+        width: 100%;
+        font-weight: bold;
+        font-size: 20px;
+      }
+    }
+
+  }
+
+  .panel-footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}

@@ -18,11 +18,13 @@
 html, body{
   margin: 0;
   padding: 0;
+  color: $font-color;
+  font-family: Gotham;
 }
 
 header{
   background: $light-gray;
-  height: 175px;
+  // height: 175px;
   width: 100%;
   
   .header-call-to-action{
@@ -41,4 +43,8 @@ header{
       display: block;
     }
   }
+}
+
+section.content-wrapper{
+  
 }

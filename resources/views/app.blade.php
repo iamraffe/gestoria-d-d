@@ -7,9 +7,9 @@
     <body>
         <section id="main">
             @include('partials._header')
-            <div class="container">
+            <section class="container content-wrapper">
                 @yield('content')
-            </div>
+            </section>
             <footer class="container-fluid">
                 <div class="row">
                     @include('partials._footer')

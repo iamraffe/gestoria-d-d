@@ -3,7 +3,7 @@
         <div class="col-sm-10 col-sm-offset-1">
           <div class="row">
             <div class="col-sm-6">
-              <img src="/img/gestoria-dyd-logo.png" alt="Logo Gestoría D&D" class="pull-left logo">
+              <h1><img src="/img/gestoria-dyd-logo.png" alt="Logo Gestoría D&D" class="pull-left logo"></h1>
             </div>
             <div class="col-sm-6 header-call-to-action">
               <div class="row">

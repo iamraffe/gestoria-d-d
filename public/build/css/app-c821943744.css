@@ -1660,7 +1660,8 @@ mark,
   text-align: right;
 }
 
-.text-center {
+.text-center,
+aside.tagline h1 {
   text-align: center;
 }
 
@@ -8620,11 +8621,72 @@ button.close {
   font-weight: bold;
   padding: 15px 30px;
   border-radius: 0;
+  text-transform: uppercase;
+  margin: 0 auto;
+  display: block;
 }
 
 .custom-btn-primary {
   background-color: #8f2c36;
   color: white;
+}
+
+.panel {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.panel.panel-dark {
+  background-color: #8f2c36;
+}
+
+.panel.panel-light {
+  background-color: #ededed;
+}
+
+.panel .panel-heading,
+.panel .panel-footer {
+  background: transparent;
+  border: none;
+}
+
+.panel .panel-heading {
+  padding-top: 25px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 22px;
+}
+
+aside.tagline h1 {
+  font-size: 22px;
+  color: #444443;
+  font-family: Gotham;
+  font-weight: 300;
+  margin: 75px auto;
+}
+
+.panel.home-panels {
+  height: 400px;
+  position: relative;
+}
+
+.panel.home-panels .panel-body p {
+  font-weight: 200;
+  font-size: 18px;
+  margin-top: 25px;
+}
+
+.panel.home-panels .panel-body p.price {
+  width: 100%;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.panel.home-panels .panel-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 nav {
@@ -8663,11 +8725,12 @@ html,
 body {
   margin: 0;
   padding: 0;
+  color: #444443;
+  font-family: Gotham;
 }
 
 header {
   background: #ededed;
-  height: 175px;
   width: 100%;
 }
 
