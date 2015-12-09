@@ -1,58 +1,3 @@
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-@import url(https://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700italic,700,900,900italic|Montserrat:400,700);
-
-// Import variables & font-faces
-// @import "variables.scss";
-// @import "font-faces.scss";
-// @import "components.scss";
-
-// // Import page specific styles
-// @import "pages/_home.scss";
-
-// // Import partials specific styles
-// @import "partials/_nav.scss";
-
-// html, body{
-//   margin: 0;
-//   padding: 0;
-//   color: $font-color;
-//   font-family: Gotham;
-// }
-
-// header{
-//   background: $light-gray;
-//   // height: 175px;
-//   width: 100%;
-  
-//   .header-call-to-action{
-//     height: 175px;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-
-//     .row{
-//       flex: 1;
-//     }
-//     span{
-//       font-family: Gotham;
-//       font-weight: bold;
-//       color: $maroon;
-//       display: block;
-//     }
-//   }
-// }
-
-// section.content-wrapper{
-  
-// }
-// 
- 
-
-/*
-
-BEGIN MARIELA
-
- */
 /*!
  * Start Bootstrap - Freelancer Bootstrap Theme (http://startbootstrap.com)
  * Code licensed under the Apache License v2.0.
@@ -225,38 +170,38 @@ header .intro-text .skills {
     border: 0;
 }
 
-// section {
-//     padding: 100px 0;
-// }
+section {
+    padding: 100px 0;
+}
 
-// section h2 {
-//     margin: 0;
-//     font-size: 3em;
-// }
+section h2 {
+    margin: 0;
+    font-size: 3em;
+}
 
-// section.success {
-//     color: #fff;
-//     background: #18bc9c;
-// }
+section.success {
+    color: #fff;
+    background: #18bc9c;
+}
 
-// section.success a,
-// section.success a:hover,
-// section.success a:focus,
-// section.success a:active,
-// section.success a.active {
-//     outline: 0;
-//     color: #2c3e50;
-// }
+section.success a,
+section.success a:hover,
+section.success a:focus,
+section.success a:active,
+section.success a.active {
+    outline: 0;
+    color: #2c3e50;
+}
 
-// @media(max-width:767px) {
-//     section {
-//         padding: 75px 0;
-//     }
+@media(max-width:767px) {
+    section {
+        padding: 75px 0;
+    }
 
-//     section.first {
-//         padding-top: 75px;
-//     }
-// }
+    section.first {
+        padding-top: 75px;
+    }
+}
 
 #portfolio .portfolio-item {
     right: 0;
@@ -511,211 +456,4 @@ footer .footer-below {
 .portfolio-modal .modal-backdrop {
     display: none;
     opacity: 0;
-}
-
-/* CSS Document */
-
-.navbar-brand > img {
-  margin-top: -45px !important;
-  width:100%;
-}
-
-.navbar-gestoria > img{
-  margin-top: 10px !important;
-  
-}
-
-.navbar-default {
-  background-color: #F0F0F0 !important;
-}
-
-.navbar-fixed-top{
-  padding: 45px 0 !important;
-}
-
-.MenuDireccion{
-  font-size:1em;
-  float:right;
-  padding:10px 16px;
-  color:#8c1d2b;
-}
-
-.Btn-cliente{
-  float:right;
-  padding-top:6px;
-}
-
-.Menu{
-  margin-top:160px;
-  
-}
-
-
-.navbar-default2 {
-  background-color: #dadad9 !important;
-}
-
-.navbar-nav {
-  padding-left: 120px !important;
-}
-
-a, a:hover, a:focus, a:active, a.active {
-  color: #8c1d2b;
-    
-  }
-  
-header {
-    background: #ffffff none repeat scroll 0 0;
-    color: #8c1d2b;
-    text-align: center;
-}
-
-header .container{
-  padding-top:20px !important;
-  padding-bottom:-10px !important; 
-  
-    padding-top: -200px !important;
-}
-
-.TextoInterno{
-  color:#404040;
-}
-
-.TopSpace{
-  padding-top:25px;
-}
-
-.TopSpace2{
-  padding-top:50px;
-}
-
-.center{
-  text-align:center;
-}
-
-.pie{
-  color:#C9C9C9;
-  font-size:0.9em;
-}
-
-
-.GranateColor{
-  color: #8c1d2b;
-}
-
-.GranateColor2{
-  color: #8c1d2b;
-}
-
-
-.VerticalLine{
-   border-right: 1px solid #D1D1D1;
-}
-
-.Info a{
-  color:#373737;
-  font-size:0.8em !important;
-  text-decoration:underline;
-}
-
-.Subtitulos{
-  color: #8c1d2b;
-}
-
-
- 
-/* CSS para la animación y localización de los DIV de cookies */
- 
-@keyframes desaparecer
-{
-0%    {bottom: 0px;}
-80%   {bottom: 0px;}
-100%    {bottom: -50px;}
-}
- 
-@-webkit-keyframes desaparecer /* Safari and Chrome */
-{
-0%    {bottom: 0px;}
-80%   {bottom: 0px;}
-100%    {bottom: -50px;}
-}
- 
-@keyframes aparecer
-{
-0%    {bottom: -38px;}
-10%   {bottom: 0px;}
-90%   {bottom: 0px;}
-100%    {bottom: -38px;}
-}
- 
-@-webkit-keyframes aparecer /* Safari and Chrome */
-{
-0%    {bottom: -38px;}
-10%   {bottom: 0px;}
-90%   {bottom: 0px;}
-100%    {bottom: -38px;}
-}
-#cookiesms1:target {
-    display: none;
-}
-.cookiesms{ 
-  width:100%;
-  height:43px;
-  margin:0 auto;
-  padding-left:1%;
-        padding-top:5px;
-        font-size: 1.2em;
-  clear:both;
-        font-weight: strong;
-color: #333;
-bottom:0px;
-position:fixed;
-left: 0px;
-background-color: #FFF;
-opacity:0.7;
-filter:alpha(opacity=70); /* For IE8 and earlier */
-transition: bottom 1s;
--webkit-transition:bottom 1s; /* Safari */
--webkit-box-shadow: 3px -3px 1px rgba(50, 50, 50, 0.56);
--moz-box-shadow:    3px -3px 1px rgba(50, 50, 50, 0.56);
-box-shadow:         3px -3px 1px rgba(50, 50, 50, 0.56);
-z-index:999999999;
-}
- 
-.cookiesms:hover{
-bottom:0px;
-}
-.cookies2{
-background-color: #FFF;
-display:inline;
-opacity:0.95;
-filter:alpha(opacity=95);
-position:absolute; 
-left:1%; 
-top:-30px;
-font-size:15px;
-height:30px;
-padding-left:25px;
-padding-right:25px;
--webkit-border-top-right-radius: 15px;
--webkit-border-top-left-radius: 15px;
--moz-border-radius-topright: 15px;
--moz-border-radius-topleft: 15px;
-border-top-right-radius: 15px;
-border-top-left-radius: 15px;
--webkit-box-shadow: 3px -3px 1px rgba(50, 50, 50, 0.56);
--moz-box-shadow:    3px -3px 1px rgba(50, 50, 50, 0.56);
-box-shadow:         3px -3px 1px rgba(50, 50, 50, 0.56);
-}
- 
-/* Fin del CSS para cookies */
- 
-/*
-
-RAFFE
-
- */
-.affix{
-  z-index: 9;
-  width: 100%;
 }
