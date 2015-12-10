@@ -9,7 +9,7 @@
                 <img src="/img/tramites.png" alt="tramites">
                     <h3>CONTRATOS DE ALQUILER, IVIMA, CERTIFICADOS ENERGÉTICOS</h3><br/>
                     <img src="/img/Ivima.png" alt="InformeTrafico">
-                    <p class="TextoInterno">En gestoría D&D le confeccionamos su contrato de alquiler para intentar evitar problemas con el inquilino y garantizar que todo se ajuste a la Ley actual.<br/><br/>
+                    <p class="TextoInterno">En gestoría D&amp;D le confeccionamos su contrato de alquiler para intentar evitar problemas con el inquilino y garantizar que todo se ajuste a la Ley actual.<br/><br/>
                     Además, si usted lo desea, nos encargamos de <b>depositar la fianza en el IVIMA o compensarla</b> si ya tiene una depositada anteriormente, ya que en la Comunidad de Madrid es obligatorio depositar la fianza del inquilino, la cuál será de un mes para las viviendas y de dos meses para los usos distintos de viviendas como son los locales comerciales. Si al finalizar el alquiler, desea recuperar la fianza del IVIMA, también podemos encargarnos de este trámite y evitarse desplazamientos.<br/><br/>
 Acuda a nosotros si además está obligado a darse de <b>alta en hacienda</b> (IAE) y a presentar los impuestos trimestrales y anuales del <b>IVA</b> (en caso de que el alquiler no sea de vivienda) o para realizar la <b>declaración de la renta.</b><br/><br/>
 Con nuestras tarifas tendrá el mejor asesoramiento jurídico para evitarse problemas con Hacienda al no tener la certeza de saber qué gastos pueden ser deducibles o no, la retención o el IVA a aplicar en función de los cambios tributarios, el IPC a aplicar cada año... y evitarse así posibles reclamaciones por parte de la AEAT. Recuerde que estos mismos gastos de asesoramiento por la Gestoría Administrativa son deducibles.<br/><br/>
@@ -53,7 +53,7 @@ Y además, si lo necesita, trabajamos con profesionales que pueden realizarle el
 
 
     <div class="col-lg-12">
-                <a href="#"><p class="TopSpace2"><img src="/img/btn-presupuesto.jpg" alt="presupuesto"></p></a>
+                <a href="{{ url('/') }}show-#contact-form"><p class="TopSpace2"><img src="/img/btn-presupuesto.jpg" alt="presupuesto"></p></a>
                 </div>
                 </div>
             </div>

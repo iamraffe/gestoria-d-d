@@ -28,7 +28,7 @@
     - <b>Liquidación de plusvalías:</b><br/> Si la herencia cuenta con bienes inmuebles, es necesario el pago de la plusvalía municipal.<br/><br/>
     Los trámites difieren en función del número de herederos, el territorio de los bienes, el domicilio del causante y los herederos... Por ello, si quiere asegurarse de que la gestión se realiza de forma correcta y evitar posibles problemas, póngase en mano de profesionales.</p>
         <div class="col-lg-12">
-                    <a href="#"><p class="TopSpace2"><img src="img/btn-presupuesto.jpg" alt="presupuesto"></p></a>
+                    <a href="{{ url('/') }}#show-contact-form"><p class="TopSpace2"><img src="img/btn-presupuesto.jpg" alt="presupuesto"></p></a>
                     </div>
                     </div>
                 </div>

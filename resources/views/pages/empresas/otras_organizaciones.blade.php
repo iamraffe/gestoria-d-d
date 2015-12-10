@@ -50,7 +50,7 @@
               <div class="col-lg-12">
               
                         
-                        <a href="#"><p class="TopSpace2 center"><img src="/img/btn-presupuesto.jpg" alt="presupuesto"></p></a>
+                        <a href="{{ url('/') }}#show-contact-form"><p class="TopSpace2 center"><img src="/img/btn-presupuesto.jpg" alt="presupuesto"></p></a>
                         
                     </div>
                 </div>

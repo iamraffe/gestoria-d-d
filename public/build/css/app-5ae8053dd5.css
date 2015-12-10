@@ -8990,3 +8990,47 @@ RAFFE
   z-index: 9;
   width: 100%;
 }
+
+.auth-page {
+  min-height: 500px;
+  margin-top: 75px;
+  margin-bottom: 100px;
+}
+
+.auth-page h1 {
+  font-size: 14px;
+}
+
+.auth-page h2 {
+  font-size: 14px;
+}
+
+footer#main-footer {
+  padding: 100px 0;
+}
+
+#contact-form {
+  margin-top: 27.5px;
+}
+
+#contact-form label {
+  font-family: Lato;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+#contact-form input,
+#contact-form textarea {
+  border: 1px solid #871A30;
+  outline: none;
+  border-radius: 0;
+}
+
+#contact-form input[type=checkbox],
+#contact-form textarea[type=checkbox] {
+  margin-right: 10px;
+}
+
+#contact-form .form-control:focus {
+  box-shadow: none;
+}

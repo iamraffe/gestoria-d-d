@@ -52,13 +52,14 @@
             <section class="container content-wrapper">
                 @yield('content')
             </section>
-            <footer class="container-fluid">
+            <footer id="main-footer" class="container-fluid">
                 <div class="row">
                     @include('partials._footer')
                 </div>
             </footer>    
         </section>
         <script src="/js/libs.js"></script>
+        <script src='https://www.google.com/recaptcha/api.js'></script>
         {{-- <script src="/js/all.js"></script> --}}
     </body>
 </html>

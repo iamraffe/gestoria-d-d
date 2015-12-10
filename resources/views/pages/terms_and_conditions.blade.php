@@ -4,7 +4,6 @@
 <div id="box_wrap"> 
 
 <section id="features" >
-  <div class="container">
     <div class="row">
     </div>
     <div class="row">
@@ -76,6 +75,5 @@
 <br />Por favor, lea atentamente la sección de ayuda de su navegador para conocer más acerca de como activar el “modo privado”. Podrá seguir visitando nuestra Web aunque su navegador esté en “modo privado”, no obstante, la experiencia de usuario puede no ser óptima y algunas utilidades pueden no funcionar.<br /></p>
           </div>          
     </div>
-  </div>
 </section>
 @stop

@@ -88,7 +88,7 @@
   <b>Pulse en el siguiente Botón para descargar documentos de utilidad relacionados con la transferencia de su vehículo.      </b>         
                       </p>
       <div class="col-lg-12">
-                  <a href="pdf/Solicitud transferencia tráfico.pdf"><p class="TopSpace2"><img src="/img/btn-documentos.png" alt="presupuesto"></p></a>
+                  <a href="{{ asset('pdf/solicitud-transferencia-trafico.pdf') }}" target="_blank"><p class="TopSpace2"><img src="/img/btn-documentos.png" alt="presupuesto"></p></a>
                   </div>
                   </div>
               </div>

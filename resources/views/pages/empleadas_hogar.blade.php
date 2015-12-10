@@ -72,17 +72,17 @@
                       <p class="TextoInterno">Si deseas descargar la documentación pulsa sobre la imágen</p>
                       </div>
                       <div class="row">
-                            <div class="col-md-4 TopSpace"><a target="_blank" href="pdf/autorización en blanco.pdf"><img src="img/btn_autorizacionSS.png" alt="Autorizacion"></a></div>
-                            <div class="col-md-4 TopSpace"><a target="_blank" href="pdf/SOLICITUD CCC.pdf"><img src="img/btn_codigodecuenta.png" alt="compra-venta"></a></div>
-                            <div class="col-md-4 TopSpace"><a target="_blank" href="pdf/SOLICITUD ALTA, BAJA, VARIACIÓN.pdf"><img src="img/btn_modeloaltabaja.png" alt="Info Vehiculo"></a></div>
+                            <div class="col-md-4 TopSpace"><a target="_blank" href="{{ asset('pdf/autorizacion-en-blanco.pdf') }}"><img src="img/btn_autorizacionSS.png" alt="Autorizacion"></a></div>
+                            <div class="col-md-4 TopSpace"><a target="_blank" href="{{ asset('pdf/SOLICITUD-CCC.pdf') }}"><img src="img/btn_codigodecuenta.png" alt="compra-venta"></a></div>
+                            <div class="col-md-4 TopSpace"><a target="_blank" href="{{ asset('pdf/SOLICITUD-ALTA-BAJA-VARIACION.pdf') }}"><img src="img/btn_modeloaltabaja.png" alt="Info Vehiculo"></a></div>
               </div>
                       <div class="row">
-                            <div class="col-md-4 TopSpace"><a target="_blank" href="pdf/CONTRATO INDEFINIDO.pdf"><img src="img/btn_contratoindefinido.png" alt="Autorizacion"></a></div>
-                            <div class="col-md-4 TopSpace"><a target="_blank" href="pdf/CONTRATO TEMPORAL.pdf"><img src="img/btn_contratotemporal.png" alt="compra-venta"></a></div>
-                            <div class="col-md-4 TopSpace"><a target="_blank" href="pdf/MODELO NOMINA (1).pdf"><img src="img/btn_nomina.png" alt="Info Vehiculo"></a></div>
+                            <div class="col-md-4 TopSpace"><a target="_blank" href="{{ asset('pdf/CONTRATO-INDEFINIDO.pdf') }}"><img src="img/btn_contratoindefinido.png" alt="Autorizacion"></a></div>
+                            <div class="col-md-4 TopSpace"><a target="_blank" href="{{ asset('pdf/CONTRATO-TEMPORAL.pdf') }}"><img src="img/btn_contratotemporal.png" alt="compra-venta"></a></div>
+                            <div class="col-md-4 TopSpace"><a target="_blank" href="{{ asset('pdf/MODELO-NOMINA.pdf') }}"><img src="img/btn_nomina.png" alt="Info Vehiculo"></a></div>
                             
                             <div class="col-lg-12">
-                      <a href="#"><p class="TopSpace2"><img src="img/btn-presupuesto.jpg" alt="presupuesto"></p></a>
+                      <a href="{{ url('/') }}#show-contact-form"><p class="TopSpace2"><img src="img/btn-presupuesto.jpg" alt="presupuesto"></p></a>
                       </div>
               </div>
                   </div>
