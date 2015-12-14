@@ -44,6 +44,10 @@ Route::group(['prefix' => 'pdf'], function () {
   // Route::get('creacion-marcas', 'PDFsController@creacion_marcas');
 });
 
+Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
+  Route::get('/', 'DashboardController@index');
+});
+
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');

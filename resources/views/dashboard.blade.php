@@ -17,7 +17,6 @@
         <![endif]-->
         <link rel="icon" type="image/png" href="/img/mifavicon.png" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        
         <!-- SCRIPT CONTROL DE COOKIES -->
         <script type="text/javascript">
             function controlcookies() {
@@ -48,10 +47,18 @@
          
         <!-- Fin del código de cookies -->
 
-        <section id="main">
+        <section id="main-dashboard">
             @include('partials._header')
             <section class="container content-wrapper">
-                @yield('content')
+              <header class="row">
+                <button class="btn btn-link pull-right">{{ \Auth::user()->name }} <span class="fa fa-pencil"></span></button>
+              </header>
+              <div class="row">
+                @include('partials._sidebar')
+                <section class="col-sm-9 dropbox">
+                  @yield('content')
+                </section>
+              </div>
             </section>
             <footer id="main-footer" class="container-fluid">
                 <div class="row">

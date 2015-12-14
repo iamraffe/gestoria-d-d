@@ -46,7 +46,8 @@
   
 // }
 // 
- 
+
+$maroon: #8c1d2b; 
 
 /*
 
@@ -771,3 +772,31 @@ footer{
     }
 
 }
+
+#main-dashboard{
+
+
+    aside.sidebar{
+        ul{
+            li{
+                button{
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                }
+
+                &.active{
+                    button{
+                        color: $maroon;
+                    }
+                }
+            }
+        }
+    }
+    .dropbox{
+        min-height: 600px;
+        border: 3px dotted gray;
+        border-radius: 35px;
+    }
+}
+
