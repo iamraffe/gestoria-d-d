@@ -15,7 +15,7 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="" id="">
-               <a href="{{ url('/auth/login') }}"><span class="Btn-cliente"><img src="/img/btn-cliente.jpg"></span></a>
+               <a href="{{ url('/dashboard') }}"><span class="Btn-cliente"><img src="/img/btn-cliente.jpg"></span></a>
                <p class="MenuDireccion">LLÁMENOS AL 917 263 312<br/> C/ Béjar 13 Madrid</p>
             </div>
             <!-- /.navbar-collapse -->

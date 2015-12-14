@@ -9035,13 +9035,14 @@ footer#main-footer {
   box-shadow: none;
 }
 
-#main-dashboard aside.sidebar ul li button {
+#main-dashboard aside.sidebar ul li a {
+  text-align: left;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-#main-dashboard aside.sidebar ul li.active button {
+#main-dashboard aside.sidebar ul li.active a {
   color: #8c1d2b;
 }
 

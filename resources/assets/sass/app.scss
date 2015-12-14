@@ -775,18 +775,23 @@ footer{
 
 #main-dashboard{
 
-
+    header.user-profile{
+        // margin-bottom: 25px;
+        // padding-bottom: 12.5px;
+        // margin-top: 12.5px;
+    }
     aside.sidebar{
         ul{
             li{
-                button{
+                a{
+                    text-align:left;
                     font-weight: bold;
                     text-transform: uppercase;
                     letter-spacing: 1px;
                 }
 
                 &.active{
-                    button{
+                    a{
                         color: $maroon;
                     }
                 }

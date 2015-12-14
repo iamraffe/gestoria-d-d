@@ -50,7 +50,7 @@
         <section id="main-dashboard">
             @include('partials._header')
             <section class="container content-wrapper">
-              <header class="row">
+              <header class="row user-profile">
                 <button class="btn btn-link pull-right">{{ \Auth::user()->name }} <span class="fa fa-pencil"></span></button>
               </header>
               <div class="row">
