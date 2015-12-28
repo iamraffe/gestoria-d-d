@@ -43,7 +43,9 @@ class FilesController extends Controller
 
         $file->move('documents/'.$request->user()->name, $name);
 
-        $request->user()->files()->create();
+        $root_id = $request->user()->folders()->first()->id;
+
+        $request->user()->files()->create(['folder_id' => $root_id, 'path' => 'documents/'.$request->user()->name.$name]);
 
         return 'Done';
     }

@@ -43,7 +43,10 @@ Route::group(['prefix' => 'pdf'], function () {
 
 Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
   Route::get('/', 'DashboardController@index');
-  Route::resource('file', 'FilesController');
+  Route::group(['prefix' => '@{user}'], function () {
+    Route::get('/', 'UsersController@show');
+    Route::resource('file', 'FilesController');
+  });
 });
 
 // Authentication routes...
