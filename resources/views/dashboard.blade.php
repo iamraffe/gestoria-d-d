@@ -17,6 +17,7 @@
         <![endif]-->
         <link rel="icon" type="image/png" href="/img/mifavicon.png" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.2.0/dropzone.css">
         <!-- SCRIPT CONTROL DE COOKIES -->
         <script type="text/javascript">
             function controlcookies() {
@@ -68,6 +69,8 @@
         </section>
         <script src="/js/libs.js"></script>
         <script src='https://www.google.com/recaptcha/api.js'></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.2.0/min/dropzone.min.js"></script>
+        @yield('scripts')
         {{-- <script src="/js/all.js"></script> --}}
     </body>
 </html>

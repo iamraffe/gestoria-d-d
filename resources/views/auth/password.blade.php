@@ -33,3 +33,7 @@
       </div>  
     </section>
 @stop
+
+@section('scripts')
+
+@stop

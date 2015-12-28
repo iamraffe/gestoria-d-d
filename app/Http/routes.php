@@ -39,13 +39,11 @@ Route::group(['prefix' => 'tramites'], function () {
 
 Route::group(['prefix' => 'pdf'], function () {
   Route::get('show/{filename}', 'PDFsController@show');
-  // Route::get('informe-trafico', 'PDFsController@certificados');
-  // Route::get('creacion-web', 'PDFsController@creacion_web');
-  // Route::get('creacion-marcas', 'PDFsController@creacion_marcas');
 });
 
 Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
   Route::get('/', 'DashboardController@index');
+  Route::resource('file', 'FilesController');
 });
 
 // Authentication routes...

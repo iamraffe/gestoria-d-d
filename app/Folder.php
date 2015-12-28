@@ -26,7 +26,7 @@ class Folder extends Model
      */
     public function folders()
     {
-        return $this->hasMany('App\Folder');
+        return $this->hasMany('App\Folder', 'parent_folder_id');
     }
 
     /**
@@ -50,6 +50,6 @@ class Folder extends Model
      */
     public function folder()
     {
-        return $this->belongsTo('App\Folder');
+        return $this->belongsTo('App\Folder', 'parent_folder_id');
     }
 }
