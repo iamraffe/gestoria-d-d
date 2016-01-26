@@ -45,6 +45,16 @@ Route::group(['prefix' => 'pdf'], function () {
   // Route::get('creacion-marcas', 'PDFsController@creacion_marcas');
 });
 
+Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {   
+  Route::get('/', 'DashboardController@index');    
+  Route::group(['prefix' => '{slug}/{id}'], function () {    
+    Route::get('/', 'UsersController@show');
+    Route::group(['prefix' => '/files/{file_slug}/{file_id}'], function () {   
+      Route::resource('/', 'FilesController@show');    
+    });
+  });    
+});
+
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
@@ -61,3 +71,4 @@ Route::post('password/email', 'Auth\PasswordController@postEmail');
 // Password reset routes...
 Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
 Route::post('password/reset', 'Auth\PasswordController@postReset');
+

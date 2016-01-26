@@ -7,7 +7,7 @@
         <meta name="description" content="Gestoría para empresas, tráfico, empleadas de hogar, asesoría jurídica y herencias ">
         <meta name="author" content="ProGonz">
         <meta name="keywords" content="gestoria, pagina web, diseño, tráfico, empleadas hogar, asesoría, sociedades, laboral, jurídico, trámites, alquiler, herencia" />
-        <title>GESTORÍA DyD - Precios especiales </title>
+        <title>GESTORÍA DyD</title>
         <link rel="stylesheet" href="{{ elixir('css/app.css') }}">
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -48,7 +48,7 @@
          
         <!-- Fin del código de cookies -->
 
-        <section id="main-dashboard">
+        <section id="main-dashboard ">
             @include('partials._header')
             <section class="container content-wrapper">
               <header class="row user-profile">
@@ -56,7 +56,7 @@
               </header>
               <div class="row">
                 @include('partials._sidebar')
-                <section class="col-sm-9 dropbox">
+                <section class="col-sm-9 dropbox TopSpace3">
                   @yield('content')
                 </section>
               </div>

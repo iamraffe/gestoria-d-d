@@ -19,7 +19,7 @@ class Folder extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'user_id', 'parent_folder_id'];
+    protected $fillable = ['name', 'slug', 'user_id', 'parent_folder_id'];
 
     /**
      * Get the folders that belong to the folder.

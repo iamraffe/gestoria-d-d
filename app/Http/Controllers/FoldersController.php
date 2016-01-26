@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests;
-use App\User;
 use Illuminate\Http\Request;
 
-class UsersController extends Controller
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+
+class FoldersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -37,7 +37,22 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $file = $request->file('file');
+
+        // $name = time().$file->getClientOriginalName();
+
+        // $file->move('documents/'.$request->user()->name, $name);
+
+        // $root_id = $request->user()->folders()->first()->id;
+
+        // $request->user()->files()->create([
+        //     'folder_id' => $root_id,
+        //     'path' => 'documents/'.$request->user()->name.$name,
+        //     'name' => $request->name,
+        //     'slug' => '@'.str_slug($request->name)
+        // ]);
+
+        // return 'Done';
     }
 
     /**
@@ -46,10 +61,9 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($slug, $id)
-    {   
-        $user = User::find($id);
-        return view('users.show', compact('user'));
+    public function show($id)
+    {
+        //
     }
 
     /**

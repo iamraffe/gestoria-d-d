@@ -19,6 +19,7 @@ class CreateFoldersTable extends Migration
             $table->integer('parent_folder_id')->unsigned()->nullable();
             $table->foreign('parent_folder_id')->references('id')->on('folders')->onDelete('cascade');
             $table->string('name');
+            $table->string('slug');
             $table->timestamps();
         });
     }

@@ -26,6 +26,8 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies($gate);
 
-        //
+        $gate->define('show-file', function($user, $post){
+            return $user->id == $file->user_id;
+        });
     }
 }

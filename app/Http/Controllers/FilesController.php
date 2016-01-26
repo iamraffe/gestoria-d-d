@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
+use App\File;
 use App\Http\Controllers\Controller;
+use App\Http\Requests;
+use Illuminate\Http\Request;
 
 class FilesController extends Controller
 {
@@ -37,15 +37,30 @@ class FilesController extends Controller
      */
     public function store(Request $request)
     {
+        // dd(\Auth::user()->root()->id);
         $file = $request->file('file');
 
-        $name = time().$file->getClientOriginalName();
+        $name = $file->getClientOriginalName();
 
-        $file->move('documents/'.$request->user()->name, $name);
+        $extension = $file->getClientOriginalExtension();
+        
+        $slug = '@'.str_slug(pathinfo($name, PATHINFO_FILENAME));
 
-        $root_id = $request->user()->folders()->first()->id;
+        $folder = $request->user()->folders()->first();
 
-        $request->user()->files()->create(['folder_id' => $root_id, 'path' => 'documents/'.$request->user()->name.$name]);
+        if (\File::exists('documents/'.$request->user()->slug.'/'.$folder->slug, $slug.'.'.$extension))
+        {
+           abort(403, "A file with this name already exists within this folder.");
+        }
+
+        $file->move('documents/'.$request->user()->slug.'/'.$folder->slug, $slug.'.'.$extension);        
+
+        $request->user()->files()->create([
+            'folder_id' => $folder->id,
+            'path' => 'documents/'.$request->user()->slug.'/'.$folder->slug.'/'.$slug.$extension,
+            'name' => $name,
+            'slug' => $slug
+        ]);
 
         return 'Done';
     }
@@ -56,9 +71,15 @@ class FilesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($user_slug, $user_id, $file_slug, $file_id)
     {
-        //
+        $file = File::findOrFail($file_id);
+
+        // if(Gate::denies('show-file', $file)){
+        //     abort(403, "Sorry, not sorry");
+        // }
+
+        return $file->name;
     }
 
     /**

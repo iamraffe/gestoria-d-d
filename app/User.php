@@ -28,7 +28,7 @@ class User extends Model implements AuthenticatableContract,
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password'];
+    protected $fillable = ['name', 'slug', 'email', 'password'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -36,4 +36,25 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+    /**
+     * Get the folders that belong to the user.
+     */
+    public function folders()
+    {
+        return $this->hasMany('App\Folder');
+    }
+
+    /**
+     * Get the files that belong to the user.
+     */
+    public function files()
+    {
+        return $this->hasMany('App\File');
+    }
+
+    public function root(){
+        return $this->folders()->first();
+    }
+
 }

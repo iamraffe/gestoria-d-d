@@ -11,6 +11,6 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return redirect('/dashboard/@'.str_slug(\Auth::user()->name));
+        return redirect('/dashboard/'.\Auth::user()->slug.'/'.\Auth::user()->id);
     }
 }
