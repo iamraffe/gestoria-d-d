@@ -90,7 +90,7 @@ de transmisiones patrimoniales</b> correspondiente y del registro de la transmis
                       </p>
                       
       <div class="col-lg-12">
-                  <a href="{{ url('/tramites/documentacion') }}"><p class="TopSpace2"><img src="/img/btn-documentos.png" alt="documentos"></p></a>
+                  <a href="{{ url('/traficos/documentacion') }}"><p class="TopSpace2"><img src="/img/btn-documentos.png" alt="documentos"></p></a>
                   </div>
                   </div>
               </div>

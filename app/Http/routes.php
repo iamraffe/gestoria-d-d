@@ -30,6 +30,7 @@ Route::group(['prefix' => 'traficos'], function () {
 });
 
 Route::group(['prefix' => 'tramites'], function () {
+  Route::get('declaracion-renta', 'ProceduresController@declaracion_renta');
   Route::get('alquiler-ivima', 'ProceduresController@alquiler_ivima');
   Route::get('informe-trafico', 'ProceduresController@certificados');
   Route::get('creacion-web', 'ProceduresController@creacion_web');

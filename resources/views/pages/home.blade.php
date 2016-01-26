@@ -55,7 +55,7 @@
         </div>
         
         
-        
+<div id="show-contact-form" >
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -88,7 +88,7 @@
         
         
         
-        <div>
+        
             <div class="container TopSpace2">
                     <div class="row">
                         <div class="col-md-6 TopSpace ">

@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row  TopSpace3">
                 <div class="col-lg-12">
-                <img src="/img/empresas.png" alt="tramites">
+                <img src="/img/empresa.png" alt="tramites">
                     <h3>DECLARACIÓN DE RENTA</h3><br/>
                     <img src="/img/Ivima.png" alt="InformeTrafico">
                     <div class="row">
@@ -38,7 +38,7 @@
             </div>
 
     <div class="col-lg-12">
-                <a href="{{ url('/') }}show-#contact-form"><p class="TopSpace2"><img src="/img/btn-presupuesto.jpg" alt="presupuesto"></p></a>
+                <a href="{{ url('/') }}#show-contact-form"><p class="TopSpace2"><img src="/img/btn-presupuesto.jpg" alt="presupuesto"></p></a>
     </div>
     
     

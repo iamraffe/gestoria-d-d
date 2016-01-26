@@ -28,4 +28,9 @@ class ProceduresController extends Controller
     {
         return view('pages.tramites.creacion_marcas');
     }
+
+    public function declaracion_renta()
+    {
+        return view('pages.tramites.declaracion_renta');
+    }
 }
