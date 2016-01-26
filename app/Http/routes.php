@@ -49,8 +49,9 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
   Route::get('/', 'DashboardController@index');    
   Route::group(['prefix' => '{slug}/{id}'], function () {    
     Route::get('/', 'UsersController@show');
+    Route::post('/file', 'FilesController@store');
     Route::group(['prefix' => '/files/{file_slug}/{file_id}'], function () {   
-      Route::resource('/', 'FilesController@show');    
+      Route::get('/', 'FilesController@show');    
     });
   });    
 });

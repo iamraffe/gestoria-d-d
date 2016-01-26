@@ -1,4 +1,4 @@
-<aside class="col-sm-3 sidebar">
+<aside class="col-sm-2 sidebar">
   <ul class="list-unstyled">
     <li class="active">
       <a href="{{ url('/dashboard') }}" class="btn btn-link btn-block"><span class="fa fa-file-o"></span> Archivos</a>

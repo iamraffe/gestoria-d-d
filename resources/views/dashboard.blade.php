@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="_token" content="{!! csrf_token() !!}"/>
         <meta name="description" content="Gestoría para empresas, tráfico, empleadas de hogar, asesoría jurídica y herencias ">
         <meta name="author" content="ProGonz">
         <meta name="keywords" content="gestoria, pagina web, diseño, tráfico, empleadas hogar, asesoría, sociedades, laboral, jurídico, trámites, alquiler, herencia" />
@@ -48,15 +49,15 @@
          
         <!-- Fin del código de cookies -->
 
-        <section id="main-dashboard ">
+        <section id="main-dashboard">
             @include('partials._header')
             <section class="container content-wrapper">
               <header class="row user-profile">
                 <button class="btn btn-link pull-right">{{ \Auth::user()->name }} <span class="fa fa-pencil"></span></button>
               </header>
-              <div class="row">
+              <div class="row TopSpace3">
                 @include('partials._sidebar')
-                <section class="col-sm-9 dropbox TopSpace3">
+                <section class="col-sm-10">
                   @yield('content')
                 </section>
               </div>

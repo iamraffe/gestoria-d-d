@@ -9137,3 +9137,24 @@ footer#main-footer {
 #contact-form .form-control:focus {
   box-shadow: none;
 }
+#main-dashboard aside.sidebar ul li a {    
+  text-align: left;   
+  font-weight: bold;    
+  text-transform: uppercase;    
+  letter-spacing: 1px;    
+}   
+    
+#main-dashboard aside.sidebar ul li.active a {    
+  color: #8c1d2b;   
+}   
+    
+.dropbox {    
+  min-height: 600px;    
+  border: 3px solid lighten(#8c1d2b, 55%);    
+  border-radius: 5px;   
+  padding-top:25px;  
+}     
+
+.delete-file{
+  outline: none;
+}

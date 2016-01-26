@@ -6,5 +6,5 @@ elixir(function(mix) {
 
     //mix.scripts(["custom.js"], "public/js/all.js", "resources/assets/js");
 
-    mix.scripts(["jquery.js", "bootstrap.js", "classie.js", "freelancer.js","jqBootstrapValidation.js", "cbpAnimatedHeader.js", "jqBootstrapValidation.js"], "public/js/libs.js", "resources/assets/js");
+    mix.scripts(["jquery.js", "bootstrap.js", "classie.js", "freelancer.js","jqBootstrapValidation.js", "cbpAnimatedHeader.js", "jqBootstrapValidation.js", "custom.js"], "public/js/libs.js", "resources/assets/js");
 });

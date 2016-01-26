@@ -6,6 +6,7 @@ use App\File;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 
 class FilesController extends Controller
 {
@@ -47,8 +48,8 @@ class FilesController extends Controller
         $slug = '@'.str_slug(pathinfo($name, PATHINFO_FILENAME));
 
         $folder = $request->user()->folders()->first();
-
-        if (\File::exists('documents/'.$request->user()->slug.'/'.$folder->slug, $slug.'.'.$extension))
+        
+        if (\File::exists('documents/'.$request->user()->slug.'/'.$folder->slug.'/'.$slug.'.'.$extension))
         {
            abort(403, "A file with this name already exists within this folder.");
         }
@@ -57,7 +58,7 @@ class FilesController extends Controller
 
         $request->user()->files()->create([
             'folder_id' => $folder->id,
-            'path' => 'documents/'.$request->user()->slug.'/'.$folder->slug.'/'.$slug.$extension,
+            'path' => 'documents/'.$request->user()->slug.'/'.$folder->slug.'/'.$slug.'.'.$extension,
             'name' => $name,
             'slug' => $slug
         ]);
@@ -75,11 +76,21 @@ class FilesController extends Controller
     {
         $file = File::findOrFail($file_id);
 
-        // if(Gate::denies('show-file', $file)){
-        //     abort(403, "Sorry, not sorry");
-        // }
+        // $filename = 'test.pdf';
 
-        return $file->name;
+        // $path = storage_path().DIRECTORY_SEPARATOR.$filename;
+
+        return Response::make(file_get_contents($file->path), 200, [
+            'Content-Type' => 'application/pdf',
+            'Content-Disposition' => 'inline; '.$file->name,
+        ]);
+        // $file = File::findOrFail($file_id);
+
+        // // if(Gate::denies('show-file', $file)){
+        // //     abort(403, "Sorry, not sorry");
+        // // }
+
+        // return $file->name;
     }
 
     /**

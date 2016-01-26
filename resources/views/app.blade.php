@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="_token" content="{!! csrf_token() !!}"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Gestoría para empresas, tráfico, empleadas de hogar, asesoría jurídica y herencias ">
         <meta name="author" content="ProGonz">
