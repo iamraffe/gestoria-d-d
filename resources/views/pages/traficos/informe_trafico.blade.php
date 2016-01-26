@@ -4,8 +4,8 @@
     <section class="content">
       <header>
           <div class="container">
-              <div class="row">
-                  <div class="col-lg-12">
+              <div class="row  TopSpace3">
+                  <div class="col-xs-12 col-lg-12">
                     <img src="/img/trafico.png" alt="Trafico">
                       <h3>INFORMES DE TRÁFICO</h3><br/>
                       <img src="/img/Informe_Trafico.png" alt="InformeTrafico">
@@ -19,6 +19,10 @@
             - DNI/CIF del solicitante<br/><br/>
                       Coste de la gestión: <b>15 euros (más IVA).</b> En caso de profesionales con alto volumen de solicitudes, tenemos un sistema de abono que permite contratar con nosotros un servicio más continuado.
   El informe de Tráfico que le remitimos tiene total validez, aparecerá firmado digitalmente por el gestor administrativo colegiado certificando que coincide con la base de datos de la Dirección General de Tráfico. Puede ser utilizado ante cualquier organismo público o privado para acreditar la información que en el informe aparece.</p>
+  
+  <div class="col-lg-12">
+                  <a href="{{ url('/') }}#show-contact-form"><p class="TopSpace2 center"><img src="/img/btn-solicitar_.png" alt="presupuesto"></p></a>
+                  </div>
                   </div>
               </div>
           </div>

@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('content')
-    <section class="content">
+    <section class="content TopSpace3">
       <div class="row">
         <div class="col-md-6">
           
@@ -32,8 +32,4 @@
         </div>
       </div>  
     </section>
-@stop
-
-@section('scripts')
-
 @stop

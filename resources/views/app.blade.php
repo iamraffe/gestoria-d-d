@@ -16,7 +16,6 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
         <link rel="icon" type="image/png" href="/img/mifavicon.png" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         
         <!-- SCRIPT CONTROL DE COOKIES -->
         <script type="text/javascript">

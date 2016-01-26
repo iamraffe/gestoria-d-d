@@ -9034,20 +9034,3 @@ footer#main-footer {
 #contact-form .form-control:focus {
   box-shadow: none;
 }
-
-#main-dashboard aside.sidebar ul li a {
-  text-align: left;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-#main-dashboard aside.sidebar ul li.active a {
-  color: #8c1d2b;
-}
-
-#main-dashboard .dropbox {
-  min-height: 600px;
-  border: 3px dotted gray;
-  border-radius: 35px;
-}

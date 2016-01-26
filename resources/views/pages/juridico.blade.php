@@ -4,11 +4,11 @@
     <section class="content">
        <header>
             <div class="container">
-                <div class="row">
+                <div class="row  TopSpace3">
                   <div class="col-lg-12">
                       <img src="img/juridico.png" alt="Trafico">
                     <h3>JURÍDICO</h3><br/>
-                    <p class="TextoInterno">Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </p>
+                    
                     </div>
                     <div class="row">
                           <div class="col-md-4 TopSpace">
@@ -27,7 +27,7 @@
                           <span class="TextoInterno">
                           • Herencias y donaciones <br />
                           • Contratos de arrendamientos de todo tipo de inmuebles <br />
-                          • Compre-venta de inmuebles y liquidación de impuestos <br />
+                          • Compra-venta de inmuebles y liquidación de impuestos <br />
                           • Divorcios express, contenciosos, de mutuo acuerdo... <br />
                           • Reclamación de cantidades <br />
                           • Certificados Registro Civil y de la Propiedad <br />

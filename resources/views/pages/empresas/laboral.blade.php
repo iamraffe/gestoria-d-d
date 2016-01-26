@@ -4,12 +4,11 @@
     <section class="content">
       <header>
             <div class="container">
-                <div class="row">
+                <div class="row  TopSpace3">
                     <div class="col-lg-12">
-                        <img src="/img/empresa.png" alt="Trafico">
+                        <img src="/img/laboral_2.png" alt="Trafico">
                     <h3>LABORAL</h3><br/>
-                        <p class="TextoInterno">Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p><br/>
-              
+
                          <div>
             <div class="container TopSpace2">
               <div class="row">
@@ -52,7 +51,7 @@
                         
                     
                     </div>
-                    <p class="Subtitulos center">INCLUYE</p><br/>
+                    <p class="Subtitulos center">SERVICIOS QUE PRESTAMOS</p><br/>
                         <p class="TextoInterno center"> 
                           - Obtención Código de Cuenta de Cotización<br/>
     - Realización de contratos y asesoramiento sobre bonificaciones a aplicar<br/>

@@ -4,14 +4,14 @@
     <section class="content">
        <header>
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
+                <div class="row  TopSpace3">
+                    <div class="col-xs-12 col-lg-12">
                       <img src="img/Herencia.png" alt="Trafico">
                         <h3>HERENCIA</h3><br/>
                         <img src="img/herencia-imagen.png" alt="InformeTrafico">
                         <p class="TextoInterno">Cuando una persona fallece y tiene bienes (propiedades inmuebles, depósitos, vehículos,
     cuentas bancarias, etc) es necesario determinar quienes son los herederos, inventariar los bienes y deudas, para que posteriormente los herederos los acepten y se los adjudiquen, pagando los impuestos correspondientes.</p><br/>
-              <p class="Subtitulos">DATOS NECESARIOS</p><br/>
+              <p class="Subtitulos">TRAMITES A SEGUIR</p><br/>
                         <p class="TextoInterno"> 
                         - <b>Solicitud certificado de defunción</b><br/><br/>
               - <b>Solicitud certificado de últimas voluntades</b><br/> <br/>

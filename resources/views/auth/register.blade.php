@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('content')
-    <section class="content auth-page">
+    <section class="content auth-page TopSpace3">
       <div class="row">
         <div class="col-sm-4 col-sm-offset-2">
           <img src="/img/auth-image.png" alt="Iniciar sesión" class="img-responsive">
@@ -39,8 +39,4 @@
         </div>
       </div>  
     </section>
-@stop
-
-@section('scripts')
-
 @stop

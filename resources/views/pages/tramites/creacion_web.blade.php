@@ -4,9 +4,9 @@
     <section class="content">
    <header>
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                <img src="/img/tramites.png" alt="tramites">
+            <div class="row  TopSpace3">
+                <div class="col-xs-12">
+                <img src="/img/corporativa.png" alt="tramites">
                     <h3>DISEÑO Y MAQUETACIÓN DE PÁGINAS WEB</h3><br/>
                     <img src="/img/web.png" alt="InformeTrafico">
                     <p class="TextoInterno">

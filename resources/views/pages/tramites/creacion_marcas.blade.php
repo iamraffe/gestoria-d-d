@@ -4,9 +4,9 @@
     <section class="content">
    <header>
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                <img src="/img/tramites.png" alt="tramites">
+            <div class="row  TopSpace3">
+                <div class="col-xs-12">
+                <img src="/img/corporativa.png" alt="tramites">
                     <h3>DISEÑO Y CREACION DE IDENTIDAD CORPORATIVA</h3><br/>
                     <p class="TextoInterno">Cualquier empresa debe definir sus valores y con ellos generar una opinión favorable en el público en el que se presente. <br/><br/>
  

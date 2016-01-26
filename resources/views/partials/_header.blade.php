@@ -1,41 +1,57 @@
-    <!-- MENU1 -->
-    <div class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/"><img src="/img/TDelanteraDYD.png"></a>
-                <a class="navbar-gestoria" href="/"><img src="/img/G.jpg"></a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="" id="">
-               <a href="{{ url('/dashboard') }}"><span class="Btn-cliente"><img src="/img/btn-cliente.jpg"></span></a>
-               <p class="MenuDireccion">LLÁMENOS AL 917 263 312<br/> C/ Béjar 13 Madrid</p>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </div>
+     <nav class="navbar navbar-default navbar-fixed-top" role="navigation"  data-spy="affix">
+  <!-- El logotipo y el icono que despliega el menú se agrupan
+       para mostrarlos mejor en los dispositivos móviles -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse"
+            data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Desplegar navegación</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
     
-    <!--FIN-MENU1-->
+  </div>
+ 
+  <!-- Agrupar los enlaces de navegación, los formularios y cualquier
+       otro elemento que se pueda ocultar al minimizar la barra -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+  <ul class="nav navbar-nav navbar-left">
+    <a class="navbar-brand logoGestoria" href="{{ url('/') }}"><img src="/img/TDelanteraDYD.png" class="" alt="Brand"></a>
+    <ul>
     
-    <!--MENU2-->
+    <ul class="nav navbar-nav">
     
-  <nav class="Menu navbar navbar-default2 center " data-spy="affix" data-offset-top="10">
-   <div class="container-fluid center">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="collapse navbar-collapse center" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-left center">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li class="page-scroll">
+    
+      
+      <li><a href="#"></a></li>
+      <li class="dropdown">
+        
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+          <li class="divider"></li>
+          <li><a href="#">/a></li>
+          <li class="divider"></li>
+          <li><a href="#"></a></li>
+        </ul>
+      </li>
+    </ul>
+ 
+    
+ 
+    <ul class="nav navbar-nav navbar-right">
+   
+      <li class="MenuDireccion"><p class="Direccion">LLÁMENOS AL <b class="BoldGrande">917 263 312</b><br/> C/ Béjar 13 Madrid</p></li>
+      <li class="Boton-Cliente"><a href="{{ url('/auth/login') }}"><img src="/img/btn-cliente.jpg" class="Boton-Cliente" onmouseover="this.src='/img/btn-cliente_hover.png';" onmouseout="this.src='/img/btn-cliente.jpg';"></a></li>
+       <li class="LogoGA"><img src="/img/G.jpg" alt="logo" class="LogoGA"> </li>
+    </ul>
+    
+    
+    
+     <ul class="nav navbar-nav navbar-center BackBlue center">
+      <li class="page-scroll">
                         <a href="/">INICIO</a>
                     </li>
                     <li class="dropdown">
@@ -70,6 +86,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">TRÁMITES <span class="caret"></span></a>
                         <ul class="dropdown-menu">
+                              <li><a href="{{ url('/tramites/declaracion-renta') }}">DECLARACIÓN DE RENTA</a></li>
                               <li><a href="{{ url('/tramites/alquiler-ivima') }}">CONTRATOS DE ALQUILER / IVIMA</a></li>
                       <li><a href="{{ url('/tramites/informe-trafico') }}">CERTIFICADOS</a></li>
                       <li><a href="{{ url('/tramites/creacion-web') }}">CREACIÓN PÁGINAS WEB</a></li>
@@ -81,14 +98,8 @@
                         <a href="{{ url('/') }}#show-contact-form">CONTACTO</a>
                     </li>
                 </ul>
-      </div>
-        
-        
-        
-        
-        
-        
-     </div>
-  </nav>
+    </div>
+  </div>
+</nav>
   
    <!--FIN-MENU2-->

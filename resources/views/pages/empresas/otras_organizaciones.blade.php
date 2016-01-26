@@ -4,11 +4,11 @@
     <section class="content">
         <header>
             <div class="container">
-                <div class="row">
+                <div class="row  TopSpace3">
                     <div class="col-lg-12">
-                        <img src="/img/empresa.png" alt="Trafico">
+                        <img src="/img/asesoramiento.png" alt="Trafico">
                     <h3>OTRAS ORGANIZACIONES</h3><br/>
-                        <p class="TextoInterno">Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p><br/>
+                        
               
                          <div>
             <div class="container TopSpace2">

@@ -4,10 +4,10 @@
     <section class="content">
    <header>
         <div class="container">
-            <div class="row">
+            <div class="row  TopSpace3">
               <div class="col-lg-12">
-                <img src="/img/tramites.png" alt="tramites">
-                <h3>CERTIFICADOS ENERGÉTICOS</h3><br/>
+                <img src="/img/empresa.png" alt="tramites">
+                <h3>CERTIFICADOS</h3><br/>
                 </div>
                 
         <div class="row">
@@ -50,70 +50,7 @@
     </header> 
     
     
-      <div class="container center">
-        <div class="row center">
-              <div class="col-sm-12 center-block">
-                <h3 class="text-center GranateColor">COSTOS</h3><br/>
-                  <div class="table-responsive">
-                   <table class="table table-bordered">
-                    <thead>
-                <tr class="text-center">
-                  <th class="text-center">RANGO SUPERFICIE VIVIENDA</th>
-                  <th class="text-center">PRECIO CON IVA</th>
-                  
-               </tr>
-            </thead>
-            <tr class="text-center">
-                            <td class="">0-­‐100 m2</td>
-                            <td class="">120,00€</td>
-                         </tr>
-                    
-                         <tr class="text-center">
-                            <td class="">100-­‐200 m2</td>
-                            <td class="">180,00€</td>
-                          </tr>
-                          
-                           <tr class="text-center">
-                            <td class="">200-­‐500 m2</td>
-                            <td class="">300,00€</td>
-                          </tr>
-                          
-                           <tr class="text-center">
-                            <td class="">500-­‐1000 m2</td>
-                            <td class="">420,00€</td>
-                          </tr>
-                          
-                          <thead>
-                <tr class="text-center">
-                  <th class="text-center">RANGO SUPERFICIE LOCAL</th>
-                  <th class="text-center">PRECIO CON IVA</th>
-                  
-               </tr>
-            </thead>
-            <tr class="text-center">
-                            <td class="">0-­‐100 m2</td>
-                            <td class="">108,00€</td>
-                         </tr>
-                    
-                         <tr class="text-center">
-                            <td class="">100-­‐200 m2</td>
-                            <td class="">156,00€</td>
-                          </tr>
-                          
-                           <tr class="text-center">
-                            <td class="">200-­‐500 m2</td>
-                            <td class="">264,00€</td>
-                          </tr>
-                          
-                           <tr class="text-center">
-                            <td class="">500-­‐1000 m2</td>
-                            <td class="">372,00€</td>
-                          </tr>
-                          
-           </table>
-                  </div>
-            </div>
-        </div>
+     
     
     </section>
 @stop

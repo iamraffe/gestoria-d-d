@@ -39,14 +39,9 @@ Route::group(['prefix' => 'tramites'], function () {
 
 Route::group(['prefix' => 'pdf'], function () {
   Route::get('show/{filename}', 'PDFsController@show');
-});
-
-Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
-  Route::get('/', 'DashboardController@index');
-  Route::group(['prefix' => '@{user}'], function () {
-    Route::get('/', 'UsersController@show');
-    Route::resource('file', 'FilesController');
-  });
+  // Route::get('informe-trafico', 'PDFsController@certificados');
+  // Route::get('creacion-web', 'PDFsController@creacion_web');
+  // Route::get('creacion-marcas', 'PDFsController@creacion_marcas');
 });
 
 // Authentication routes...

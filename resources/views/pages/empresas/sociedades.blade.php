@@ -4,31 +4,17 @@
     <section class="content">
        <header>
             <div class="container">
-                <div class="row">
+                <div class="row TopSpace3">
                     <div class="col-lg-12">
-                        <img src="/img/empresa.png" alt="Trafico">
+                        <img src="/img/asesoramiento.png" alt="Trafico">
                     <h3>SOCIEDADES</h3><br/>
-                        <p class="TextoInterno">Asesoría contable</p><br/>
+                        
               
                          <div>
-            <div class="container TopSpace2">
-              <div class="row">
-                          <div class="col-md-6 TopSpace center VerticalLine">
-                          <img src="/img/btn_emprendedores.png" alt="certificado Energetico"><p class="GranateColor TopSpace"><a href="certificados.html"><b>95€ / mes*</b></a><hr>
-                          </div>
-                          
-                          <div class="col-md-6 TopSpace center">
-                          <img src="/img/btn_51-100.png" alt="certificados"><p class="GranateColor TopSpace"><a href="certificados.html"><b>120€ / mes*</b></a><hr>
-                          </div>
-
-            </div>
-                    <div class="row">
-                        <div class="col-md-6 TopSpace center VerticalLine">
-                          <img src="/img/btn_101-150.png" alt="web"><p class="GranateColor TopSpace"><a href="certificados.html"><b>160€ / mes*</b></a>
-                          </div>
-                          
-                          <div class="col-md-6 TopSpace center">
-                          <img src="/img/btn_151-200.png" alt="Ivima"><p class="GranateColor TopSpace"><a href="certificados.html"><b>200€ / mes*</b></a>
+            <div class="container">
+              <div class="row row-centered">
+                          <div class="col-xs-12 center-block">
+                          <img src="/img/Circulo-trabajadores.png" alt="trabajadores" >
                           </div>
                     </div>
               </div>
@@ -51,8 +37,9 @@
                         
                     
                     </div>
-                    <p class="Subtitulos center">INCLUYE</p><br/>
+                    <p class="Subtitulos center">SERVICIOS QUE PRESTAMOS</p><br/>
                         <p class="TextoInterno center"> 
+                        <b>CONTABLE</b><br/>
                           - Libro Diario<br/>
                 - Balance de Situación<br/>
                             - Cuenta de Pérdidas y Ganancias<br/>
@@ -65,13 +52,15 @@
                             - Confección y presentación Cuentas Anuales <br/>
                             - Legalización de libros<br/><br/>
                             
+                            <b>FISCAL</b><br/>
                             - Realización y presentación de todas las liquidaciones de impuestos, así como de sus respectivos resúmenes anuales:<br/>
     IVA: 303 y 390 (trimestral y anual)<br/> 
     - Retenciones: 111, 115, 180 y 190<br/>
     - Operaciones con terceros: 347 y 349 (nacional e intracomunitario)<br/>
      - Impuesto de Sociedades: 200, 202<br/><br/>
      
-     Asesoramiento y elaboración de estatutos de sociedades<br/>
+     <b>JURÍDICO</b><br/>
+     - Asesoramiento y elaboración de estatutos de sociedades<br/>
     - Elaboración de escrituras de apoderamiento, renovación de cargos y cambio nombre<br/>
     - Cambio domicilio social y fiscal<br/>
     - Solicitud CIF Definitivo<br/>
@@ -86,6 +75,16 @@
     - Apertura centro de trabajo<br/>
     - Disolución sociedad inactiva<br/>
                         </p>
+                        
+                        <div class="col-lg-12">
+                      <p class="Subtitulos center TopSpace">CÓMO PUEDES TRAER LA DOCUMENTACIÓN O LAS FACTURAS</p><br/>
+                      <p class="TextoInterno center"> 
+                      - Subir a través de nuestra web en el área de clientes<br/>
+                           - Correo ordinario<br/>
+              - Presencialmente en nuestras oficina <br/>
+                          -  Correo electrónico<br/>
+              - Vamos a recogerlo<br/><br/></p>
+              </div>
                         
                         
                     </div>
