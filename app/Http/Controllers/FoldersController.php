@@ -38,14 +38,21 @@ class FoldersController extends Controller
     public function store(Request $request)
     {
         $folder_name = $request->folder_name;
+
         $parent_folder_id = $request->current_folder;
+
+        $folder_slug = '@'.str_slug($folder_name);
 
         try {
             $request->user()->folders()->create([
                 'parent_folder_id' => $parent_folder_id,
-                'slug' => '@'.$folder_name,
+                'slug' => $folder_slug,
                 'name' => $folder_name
             ]);
+
+
+
+            \File::makeDirectory(public_path('documents/'.$request->user()->slug.'/'.current_folder_path(Folder::find($parent_folder_id)).'/'.$folder_slug));
         }catch(\Exception $e){
             return response()->json([
                 'message' => 'Folder was not created',
@@ -102,11 +109,6 @@ class FoldersController extends Controller
     public function destroy($id)
     {
         $folder = Folder::find($id);  
-        // current_folder_path($folder);
-
-        // dd('test');
-        // 
-        // dd($folder->user()->first()->slug);
 
         try {
             \File::deleteDirectory(public_path('documents/'.$folder->user()->first()->slug.'/'.current_folder_path($folder)));
