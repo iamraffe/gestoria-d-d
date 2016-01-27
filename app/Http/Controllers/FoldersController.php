@@ -97,7 +97,34 @@ class FoldersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $folder = Folder::find($id);
+
+        $old_path = public_path('documents/'.$folder->user()->first()->slug.'/'.current_folder_path(Folder::find($folder->parent_folder_id)).'/'.$folder->slug);
+
+        $folder->name = $request->folder_name;
+
+        $folder->slug = '@'.str_slug($request->folder_name);
+
+        
+
+        try {
+
+            $folder->save();    
+
+            $new_path = public_path('documents/'.$folder->user()->first()->slug.'/'.current_folder_path(Folder::find($folder->parent_folder_id)).'/'.$folder->slug);
+
+            \File::move($old_path, $new_path);
+
+        }catch(\Exception $e){
+            return response()->json([
+                'message' => 'Folder was not updated',
+                'description' => $e->getMessage()
+            ], 403);
+        }
+        return response()->json([
+            'message' => 'Folder updated correctly',
+            'description' => 'Folder updated correctly'
+        ], 201); 
     }
 
     /**

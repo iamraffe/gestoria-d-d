@@ -12,7 +12,7 @@
           <div class="row">
             <div class="col-sm-10 col-sm-offset-1">
               @foreach ($folders as $folder)
-                  <div class="col-sm-3" data-folder-id="{{ $folder->id }}">
+                  <div class="col-sm-3" data-folder-name="{{ $folder->name }}" data-folder-id="{{ $folder->id }}">
                     <button type="button" class="edit-folder close" ><span aria-hidden="true" style="position: absolute; font-size: 13px; top: 9px; right: 40px; color: blue;" class="fa fa-pencil"></span></button>
                     <button type="button" class="delete-folder close" ><span aria-hidden="true" style="position: absolute; top: 5px; right: 22.5px; color: red;">&times;</span></button>
                     <a href="#" class="thumbnail">

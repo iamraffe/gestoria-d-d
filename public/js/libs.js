@@ -5275,6 +5275,8 @@ $(document).on('click', '.edit-file',function(e){
 FOLDERS
 
  */
+
+//ADD
 $(document).on('submit', '#add-folder',function(e){
   e.preventDefault();
   var that = $(this);
@@ -5308,6 +5310,50 @@ $(document).on('submit', '#add-folder',function(e){
   });
 });
 
+//EDIT
+$(document).on('click', '.edit-folder',function(e){
+  var id = $(this).parent().attr('data-folder-id');
+  var folder_name = $(this).parent().attr('data-folder-name');
+  $('#edit-folder-modal').modal('show');
+  $('#edit-folder input[name="folder_name"]').val(folder_name);
+  $('#edit-folder').attr('action', '/dashboard/folders/'+id);
+});
+
+$(document).on('submit', '#edit-folder',function(e){
+  e.preventDefault();
+  var that = $(this);
+  var data = that.serializeArray();
+  console.log("edit folder");
+  $.ajax({
+    type: that.attr('method'),
+    url         : that.attr('action'),
+    data : data,
+    encode          : true,
+    beforeSend: function(){
+      console.log("Making call");
+    },
+    error: function(xhr, textStatus, thrownError) {
+      console.log("Error");
+        // swal({
+        //     title: 'ERROR',
+        //     text: 'There was an error with your request. If this error persists please contact your webmaster.',
+        //     type: "error",
+        //     showConfirmButton: true
+        // });
+    },
+    success: function(response) {
+      console.log("Success");
+      console.log(response);
+      $('#edit-folder-modal').modal('hide');
+      location.reload();
+        // $('#loading').hide();
+        // $('p#'+param).remove();
+        //window.location.href = "{{ url('admin/menus/'.str_slug($menu->name).'/edit') }}";
+    }
+  });
+});
+
+//DELETE
 $(document).on('click', '.delete-folder',function(e){
   e.preventDefault();
   var id = $(this).parent().attr('data-folder-id');
@@ -5339,6 +5385,7 @@ $(document).on('click', '.delete-folder',function(e){
     }
   });
 });
+
 Dropzone.autoDiscover = false;
 var ready;
 
@@ -5421,4 +5468,8 @@ $('#file-upload-modal').on('hidden.bs.modal', function (e) {
     location.reload();
   }
 })
+
+$('#edit-folder-modal').on('hide.bs.modal', function (e) {
+  $('#edit-folder').attr('action','');
+});
 //# sourceMappingURL=libs.js.map
