@@ -5,7 +5,7 @@
       <li class="active"><a href="#"><span class="fa fa-home"></span> Inicio</a></li>
   </ul>
   <div class="dropbox">
-  @if($user->files)
+  @if($user->files->count() != 0)
     @foreach ($user->files->chunk(4) as $files)
         <div class="row">
           <div class="col-sm-10 col-sm-offset-1">
@@ -25,10 +25,14 @@
         </div>
     @endforeach
   @else
-    <p>No files in this folder...</p>
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1">
+        <p>No existen archivos en esta carpeta...</p>
+      </div>
+    </div>
   @endif
   </div>
-  <form action="{{ url('dashboard/'.$user->slug.'/'.$user->id.'/file') }}" method="POST" class="dropzone">
+  <form action="{{ url('dashboard/'.$user->slug.'/'.$user->id.'/files') }}" method="POST" class="dropzone">
     {{ csrf_field() }}
   </form>
 @stop

@@ -47,9 +47,10 @@ Route::group(['prefix' => 'pdf'], function () {
 
 Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {   
   Route::get('/', 'DashboardController@index');    
+  Route::delete('/files/{id}', 'FilesController@destroy');
   Route::group(['prefix' => '{slug}/{id}'], function () {    
     Route::get('/', 'UsersController@show');
-    Route::post('/file', 'FilesController@store');
+    Route::post('/files', 'FilesController@store');
     Route::group(['prefix' => '/files/{file_slug}/{file_id}'], function () {   
       Route::get('/', 'FilesController@show');    
     });

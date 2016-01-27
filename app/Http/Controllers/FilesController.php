@@ -124,6 +124,19 @@ class FilesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $file = File::find($id);   
+        try {
+            \File::delete(public_path($file->path));
+            $file->delete();
+        }catch(\Exception $e){
+            return response()->json([
+                'message' => 'File was not deleted',
+                'description' => $e->getMessage()
+            ], 500);
+        }
+        return response()->json([
+            'message' => 'File deleted correctly',
+            'description' => 'File deleted correctly'
+        ], 201); 
     }
 }
