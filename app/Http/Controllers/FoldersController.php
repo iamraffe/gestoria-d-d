@@ -53,7 +53,7 @@ class FoldersController extends Controller
 
 
 
-            \File::makeDirectory(public_path('documents/'.$request->user()->slug.'/'.current_folder_path(Folder::find($parent_folder_id)).'/'.$folder_slug));
+            \File::makeDirectory(public_path('documents/'.$request->user()->slug.'/'.current_folder_path(Folder::find($parent_folder_id)).$folder_slug));
         }catch(\Exception $e){
             return response()->json([
                 'message' => 'Folder was not created',
@@ -101,23 +101,28 @@ class FoldersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $folder = Folder::find($id);
+        $folder = Folder::findOrFail($id);
 
-        $old_path = public_path('documents/'.$folder->user()->first()->slug.'/'.current_folder_path(Folder::find($folder->parent_folder_id)).'/'.$folder->slug);
+        $old_path = public_path('documents/'.$folder->user()->first()->slug.'/'.current_folder_path(Folder::find($folder->parent_folder_id)).$folder->slug);
 
         $folder->name = $request->folder_name;
 
         $folder->slug = '@'.str_slug($request->folder_name);
 
-        
-
         try {
 
             $folder->save();    
 
-            $new_path = public_path('documents/'.$folder->user()->first()->slug.'/'.current_folder_path(Folder::find($folder->parent_folder_id)).'/'.$folder->slug);
+            $new_path = 'documents/'.$folder->user()->first()->slug.'/'.current_folder_path(Folder::find($folder->parent_folder_id)).$folder->slug;
 
-            \File::move($old_path, $new_path);
+            \File::move($old_path, public_path($new_path));
+
+            $collection = $folder->files()->get();
+
+            $collection = $collection->each(function ($file, $key) use($new_path) {
+                $file->path = $new_path.'/'.$file->name_on_disk;
+                $file->save();
+            });
 
         }catch(\Exception $e){
             return response()->json([

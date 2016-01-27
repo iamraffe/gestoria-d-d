@@ -55,7 +55,7 @@ class FilesController extends Controller
 
         $file_slug = '@'.$file_name;
 
-        $complete_path = $file_path.'/'.$file_name_on_disk;
+        $complete_path = $file_path.$file_name_on_disk;
 
         if (\File::exists($complete_path))
         {
@@ -69,6 +69,7 @@ class FilesController extends Controller
                 'folder_id' => $folder->id,
                 'path' => $complete_path,
                 'name' => $file_name,
+                'name_on_disk' => $file_name_on_disk,
                 'slug' => $file_slug
             ]);
         }catch(\Exception $e){
@@ -108,7 +109,7 @@ class FilesController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -120,7 +121,32 @@ class FilesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $file = File::findOrFail($id);
+
+        // $old_path = public_path($file->path);
+
+        $file->name = $request->file_name;
+
+        $file->slug = '@'.str_slug($request->file_name);
+        
+        try {
+
+            $file->save();    
+
+            // $new_path = public_path('documents/'.$folder->user()->first()->slug.'/'.current_folder_path(Folder::find($folder->parent_folder_id)).'/'.$folder->slug);
+
+            // \File::move($old_path, $new_path);
+
+        }catch(\Exception $e){
+            return response()->json([
+                'message' => 'File was not updated',
+                'description' => $e->getMessage()
+            ], 403);
+        }
+        return response()->json([
+            'message' => 'File updated correctly',
+            'description' => 'File updated correctly'
+        ], 201); 
     }
 
     /**

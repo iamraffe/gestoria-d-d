@@ -19,6 +19,32 @@
     </div>
   </div>
 </div>
+{{-- EDIT FILE --}}
+<div class="modal fade" id="edit-file-modal" tabindex="-1" role="dialog" aria-labelledby="edit-file-modal-label">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Editar archivo</h4>
+      </div>
+      <form id="edit-file" action="" method="POST">
+        {{ csrf_field() }}
+        <input type="hidden" name="_method" value="PUT">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="file_name">Nombre del archivo:</label>
+            <input type="text" class="form-control" name="file_name">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn btn-sm btn-success">Enviar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
 
 {{-- ADD FOLDER --}}
 <div class="modal fade" id="add-folder-modal" tabindex="-1" role="dialog" aria-labelledby="add-folder-modal-label">

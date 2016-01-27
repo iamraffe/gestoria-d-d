@@ -20,7 +20,7 @@ class File extends Model
      *
      * @var array
      */
-    protected $fillable = ['path', 'name', 'slug', 'user_id', 'folder_id'];
+    protected $fillable = ['path', 'name', 'name_on_disk', 'slug', 'user_id', 'folder_id'];
 
     /**
      * Get the user that owns the folder.

@@ -20,6 +20,7 @@ class CreateFilesTable extends Migration
             $table->foreign('folder_id')->references('id')->on('folders')->onDelete('cascade');
             $table->string('path');
             $table->string('name');
+            $table->string('name_on_disk');
             $table->string('slug');
             $table->timestamps();
         });

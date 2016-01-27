@@ -11,6 +11,8 @@ $.ajaxSetup({
 FILES
 
  */
+
+//ADD
 $(document).on('click', '.delete-file',function(e){
   e.preventDefault();
   var id = $(this).parent().attr('data-file-id');
@@ -43,13 +45,24 @@ $(document).on('click', '.delete-file',function(e){
   });
 });
 
+//EDIT
 $(document).on('click', '.edit-file',function(e){
+  var id = $(this).parent().attr('data-file-id');
+  var file_name = $(this).parent().attr('data-file-name');
+  $('#edit-file-modal').modal('show');
+  $('#edit-file input[name="file_name"]').val(file_name);
+  $('#edit-file').attr('action', '/dashboard/files/'+id);
+});
+
+$(document).on('submit', '#edit-file',function(e){
   e.preventDefault();
+  var that = $(this);
+  var data = that.serializeArray();
   console.log("edit file");
   $.ajax({
-    type: "POST",
-    url         : '/dashboard/files/'+id,
-    data : {_method : 'DELETE'},
+    type: that.attr('method'),
+    url         : that.attr('action'),
+    data : data,
     encode          : true,
     beforeSend: function(){
       console.log("Making call");
@@ -66,6 +79,7 @@ $(document).on('click', '.edit-file',function(e){
     success: function(response) {
       console.log("Success");
       console.log(response);
+      $('#edit-file-modal').modal('hide');
       location.reload();
         // $('#loading').hide();
         // $('p#'+param).remove();
@@ -275,4 +289,7 @@ $('#file-upload-modal').on('hidden.bs.modal', function (e) {
 
 $('#edit-folder-modal').on('hide.bs.modal', function (e) {
   $('#edit-folder').attr('action','');
+});
+$('#edit-file-modal').on('hide.bs.modal', function (e) {
+  $('#edit-file').attr('action','');
 });
