@@ -49,7 +49,9 @@ class UsersController extends Controller
     public function show($slug, $id)
     {   
         $user = User::find($id);
-        return view('users.show', compact('user'));
+        $current_folder = $user->folders()->first();
+        $child_folders = $current_folder->folders()->get();
+        return view('users.show', compact('user', 'current_folder', 'child_folders'));
     }
 
     /**

@@ -31,6 +31,7 @@
          </script>
     </head>
     <body id="page-top" class="index" style="position:relative;">
+        @include('partials._modals')
         <!--Código HTML de la política de cookies -->
          
         <!--La URL incluida es la parte que se ha de modificar -->
@@ -68,9 +69,10 @@
                 </div>
             </footer>    
         </section>
+
         <script src="/js/libs.js"></script>
         <script src='https://www.google.com/recaptcha/api.js'></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.2.0/min/dropzone.min.js"></script>
+        {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.2.0/min/dropzone.min.js"></script> --}}
         @yield('scripts')
         {{-- <script src="/js/all.js"></script> --}}
     </body>

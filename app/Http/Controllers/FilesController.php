@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\File;
+use App\Folder;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use Illuminate\Http\Request;
@@ -38,32 +39,49 @@ class FilesController extends Controller
      */
     public function store(Request $request)
     {
-        // dd(\Auth::user()->root()->id);
         $file = $request->file('file');
 
-        $name = $file->getClientOriginalName();
+        $folder  = Folder::findOrFail($request->current_folder);
+
+        $file_original_name = str_slug(pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME));
 
         $extension = $file->getClientOriginalExtension();
-        
-        $slug = '@'.str_slug(pathinfo($name, PATHINFO_FILENAME));
 
-        $folder = $request->user()->folders()->first();
-        
-        if (\File::exists('documents/'.$request->user()->slug.'/'.$folder->slug.'/'.$slug.'.'.$extension))
+        $file_path = 'documents/'.$request->user()->slug.'/'.$folder->slug;
+
+        $file_name_on_disk = $file_original_name.str_random(20).'.'.$extension;
+
+        $file_name = $file_original_name.'.'.$extension;
+
+        $file_slug = '@'.$file_name;
+
+        $complete_path = $file_path.'/'.$file_name_on_disk;
+
+        if (\File::exists($complete_path))
         {
            abort(403, "A file with this name already exists within this folder.");
         }
 
-        $file->move('documents/'.$request->user()->slug.'/'.$folder->slug, $slug.'.'.$extension);        
+        $file->move($file_path, $file_name_on_disk); 
 
-        $request->user()->files()->create([
-            'folder_id' => $folder->id,
-            'path' => 'documents/'.$request->user()->slug.'/'.$folder->slug.'/'.$slug.'.'.$extension,
-            'name' => $name,
-            'slug' => $slug
-        ]);
+        try {
+            $request->user()->files()->create([
+                'folder_id' => $folder->id,
+                'path' => $complete_path,
+                'name' => $file_name,
+                'slug' => $file_slug
+            ]);
+        }catch(\Exception $e){
+            return response()->json([
+                'message' => 'File was not created',
+                'description' => $e->getMessage()
+            ], 403);
+        }
 
-        return 'Done';
+        return response()->json([
+            'message' => 'File created correctly',
+            'description' => 'A file was uploaded and stored correctly at '.$complete_path
+        ], 201); 
     }
 
     /**
@@ -132,7 +150,7 @@ class FilesController extends Controller
             return response()->json([
                 'message' => 'File was not deleted',
                 'description' => $e->getMessage()
-            ], 500);
+            ], 403);
         }
         return response()->json([
             'message' => 'File deleted correctly',

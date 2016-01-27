@@ -44,7 +44,7 @@
     <ul class="nav navbar-nav navbar-right">
    
       <li class="MenuDireccion"><p class="Direccion">LLÁMENOS AL <b class="BoldGrande">917 263 312</b><br/> C/ Béjar 13 Madrid</p></li>
-      <li class="Boton-Cliente"><a href="{{ url('/auth/login') }}"><img src="/img/btn-cliente.jpg" class="Boton-Cliente" onmouseover="this.src='/img/btn-cliente_hover.png';" onmouseout="this.src='/img/btn-cliente.jpg';"></a></li>
+      <li class="Boton-Cliente"><a href="{{ url('/dashboard') }}"><img src="/img/btn-cliente.jpg" class="Boton-Cliente" onmouseover="this.src='/img/btn-cliente_hover.png';" onmouseout="this.src='/img/btn-cliente.jpg';"></a></li>
        <li class="LogoGA"><img src="/img/G.jpg" alt="logo" class="LogoGA"> </li>
     </ul>
     

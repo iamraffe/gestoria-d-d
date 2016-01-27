@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
+use App\Folder;
 use App\Http\Controllers\Controller;
+use App\Http\Requests;
+use Illuminate\Http\Request;
 
 class FoldersController extends Controller
 {
@@ -37,22 +37,26 @@ class FoldersController extends Controller
      */
     public function store(Request $request)
     {
-        // $file = $request->file('file');
+        $folder_name = $request->folder_name;
+        $parent_folder_id = $request->current_folder;
 
-        // $name = time().$file->getClientOriginalName();
+        try {
+            $request->user()->folders()->create([
+                'parent_folder_id' => $parent_folder_id,
+                'slug' => '@'.$folder_name,
+                'name' => $folder_name
+            ]);
+        }catch(\Exception $e){
+            return response()->json([
+                'message' => 'Folder was not created',
+                'description' => $e->getMessage()
+            ], 403);
+        }
 
-        // $file->move('documents/'.$request->user()->name, $name);
-
-        // $root_id = $request->user()->folders()->first()->id;
-
-        // $request->user()->files()->create([
-        //     'folder_id' => $root_id,
-        //     'path' => 'documents/'.$request->user()->name.$name,
-        //     'name' => $request->name,
-        //     'slug' => '@'.str_slug($request->name)
-        // ]);
-
-        // return 'Done';
+        return response()->json([
+            'message' => 'Folder created correctly',
+            'description' => 'A folder with the name '.$folder_name.' was created correctly'
+        ], 201); 
     }
 
     /**
@@ -97,6 +101,25 @@ class FoldersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $folder = Folder::find($id);  
+        // current_folder_path($folder);
+
+        // dd('test');
+        // 
+        // dd($folder->user()->first()->slug);
+
+        try {
+            \File::deleteDirectory(public_path('documents/'.$folder->user()->first()->slug.'/'.current_folder_path($folder)));
+            $folder->delete();
+        }catch(\Exception $e){
+            return response()->json([
+                'message' => 'Folder was not deleted',
+                'description' => $e->getMessage()
+            ], 403);
+        }
+        return response()->json([
+            'message' => 'Folder deleted correctly',
+            'description' => 'Folder deleted correctly'
+        ], 201); 
     }
 }

@@ -9137,11 +9137,16 @@ footer#main-footer {
 #contact-form .form-control:focus {
   box-shadow: none;
 }
+#main-dashboard aside.sidebar{
+  margin-top: 75px;
+}
+
 #main-dashboard aside.sidebar ul li a {    
   text-align: left;   
   font-weight: bold;    
   text-transform: uppercase;    
   letter-spacing: 1px;    
+  font-size: 10px;
 }   
     
 #main-dashboard aside.sidebar ul li.active a {    
@@ -9153,6 +9158,15 @@ footer#main-footer {
   border: 3px solid lighten(#8c1d2b, 55%);    
   border-radius: 5px;   
   padding-top:25px;  
+
+  h2{
+    margin-left: 25px;
+    font-size: 20px;
+  }
+
+  hr{
+
+  }
 }     
 
 .delete-file{

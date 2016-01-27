@@ -40,21 +40,29 @@ Route::group(['prefix' => 'tramites'], function () {
 
 Route::group(['prefix' => 'pdf'], function () {
   Route::get('show/{filename}', 'PDFsController@show');
-  // Route::get('informe-trafico', 'PDFsController@certificados');
-  // Route::get('creacion-web', 'PDFsController@creacion_web');
-  // Route::get('creacion-marcas', 'PDFsController@creacion_marcas');
 });
 
 Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {   
   Route::get('/', 'DashboardController@index');    
   Route::delete('/files/{id}', 'FilesController@destroy');
+  Route::delete('/folders/{id}', 'FoldersController@destroy');
+
   Route::group(['prefix' => '{slug}/{id}'], function () {    
+
     Route::get('/', 'UsersController@show');
     Route::post('/files', 'FilesController@store');
+     Route::post('/folders', 'FoldersController@store');
+
     Route::group(['prefix' => '/files/{file_slug}/{file_id}'], function () {   
       Route::get('/', 'FilesController@show');    
     });
+
+    Route::group(['prefix' => '/folders/{folder_slug}/{folder_id}'], function () {   
+      Route::get('/', 'FoldersController@show');    
+    });
+
   });    
+
 });
 
 // Authentication routes...
