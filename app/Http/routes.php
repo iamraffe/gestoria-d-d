@@ -52,7 +52,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
 
     Route::get('/', 'UsersController@show');
     Route::post('/files', 'FilesController@store');
-     Route::post('/folders', 'FoldersController@store');
+    Route::post('/folders', 'FoldersController@store');
 
     Route::group(['prefix' => '/files/{file_slug}/{file_id}'], function () {   
       Route::get('/', 'FilesController@show');    

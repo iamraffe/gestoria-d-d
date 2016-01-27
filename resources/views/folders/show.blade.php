@@ -2,7 +2,8 @@
 
 @section('content')
   <ul class="breadcrumb">
-      <li class="active"><a href="#"><span class="fa fa-home"></span> Inicio</a></li>
+      {{-- <li class="active"><a href="#"><span class="fa fa-home"></span> Inicio</a></li> --}}
+      {!! current_folder_breadcrumb_path($user, $current_folder) !!}
   </ul>
   <div class="dropbox">
   @if($child_folders->count() != 0)

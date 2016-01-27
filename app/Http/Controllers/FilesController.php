@@ -47,7 +47,7 @@ class FilesController extends Controller
 
         $extension = $file->getClientOriginalExtension();
 
-        $file_path = 'documents/'.$request->user()->slug.'/'.$folder->slug;
+        $file_path = 'documents/'.$request->user()->slug.'/'.current_folder_path($folder);
 
         $file_name_on_disk = $file_original_name.str_random(20).'.'.$extension;
 
@@ -94,21 +94,10 @@ class FilesController extends Controller
     {
         $file = File::findOrFail($file_id);
 
-        // $filename = 'test.pdf';
-
-        // $path = storage_path().DIRECTORY_SEPARATOR.$filename;
-
         return Response::make(file_get_contents($file->path), 200, [
             'Content-Type' => 'application/pdf',
             'Content-Disposition' => 'inline; '.$file->name,
         ]);
-        // $file = File::findOrFail($file_id);
-
-        // // if(Gate::denies('show-file', $file)){
-        // //     abort(403, "Sorry, not sorry");
-        // // }
-
-        // return $file->name;
     }
 
     /**

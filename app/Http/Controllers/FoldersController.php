@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Folder;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
+use App\User;
 use Illuminate\Http\Request;
 
 class FoldersController extends Controller
@@ -72,9 +73,12 @@ class FoldersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($user_slug, $user_id, $folder_slug, $folder_id)
     {
-        //
+        $current_folder = Folder::findOrFail($folder_id);
+        $user = User::findOrFail($user_id);
+        $child_folders = $current_folder->folders()->get();
+        return view('folders.show', compact('current_folder','user', 'child_folders'));
     }
 
     /**
