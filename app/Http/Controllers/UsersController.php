@@ -30,7 +30,7 @@ class UsersController extends Controller
     {
         $users = User::all();
         $user = \Auth::user();
-        return view('users.index', compact('users'));
+        return view('users.index', compact('users', 'user'));
     }
 
     /**

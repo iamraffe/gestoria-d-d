@@ -1,6 +1,7 @@
 @extends('dashboard')
 
 @section('content')
+      @include('partials._modals')
       <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
             <tr>
@@ -34,8 +35,8 @@
                   @endif
                 </td>
                 <td>
-                  <button href="{{ url('/dashboard/users/'.$user->slug.'/'.$user->id) }}" class="btn btn-app btn-lg"><span class="fa fa-eye"></span></button>
-                  <button href="#" class="btn btn-app btn-lg" data-toggle="modal" data-target="#edit-user-modal"><span class="fa fa-pencil"></span></button>
+                  <a href="{{ url('/dashboard/users/'.$user->slug.'/'.$user->id) }}" class="btn btn-app btn-lg"><span class="fa fa-eye"></span></a>
+                  <a href="#" class="btn btn-app btn-lg" data-toggle="modal" data-target="#edit-user-modal"><span class="fa fa-pencil"></span></a>
                   <form action="{{ '/dashboard/users/'.$user->slug.'/'.$user->id }}" method="POST">
                       {{ csrf_field() }}
                       <input type="hidden" name="_method" value="DELETE">
