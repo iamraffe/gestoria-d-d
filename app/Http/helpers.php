@@ -22,7 +22,7 @@ function folder_url($user, $folder){
 function current_folder_path($folder){
   $path = '';
 
-  while($folder->parent_folder_id != 0){
+  while($folder->parent_folder_id != $folder->id){
     $path = $folder->slug.'/'.$path;
     $folder = Folder::find($folder->parent_folder_id);
   }
@@ -37,7 +37,7 @@ function current_folder_breadcrumb_path($user, $folder){
 
   $folder = Folder::find($folder->parent_folder_id);
 
-  while($folder->parent_folder_id != 0){
+  while($folder->parent_folder_id != $folder->id){
     $path = '<li><a href="'.url(folder_url($user, $folder)).'"><span class="fa fa-folder"></span> '.$folder->name.'</a></li>'.$path;
     $folder = Folder::find($folder->parent_folder_id);
   }
@@ -45,4 +45,10 @@ function current_folder_breadcrumb_path($user, $folder){
   $path = '<li><a href="'.url('/dashboard/'.$user->slug.'/'.$user->id).'"><span class="fa fa-home"></span> Inicio</a></li>'.$path;
 
   return $path;
+}
+
+function child_folders($folder){
+  return $folder->folders()->get()->filter(function($folder){
+    return $folder->id != $folder->parent_folder_id;
+  });
 }

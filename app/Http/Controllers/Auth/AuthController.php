@@ -24,7 +24,7 @@ class AuthController extends Controller
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
     protected $redirectPath = '/dashboard';
-    
+
     protected $redirectTo = '/dashboard';
     /**
      * Create a new authentication controller instance.
@@ -66,11 +66,18 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
 
-        $user->folders()->create([
+        $folder = $user->folders()->create([
             'name' => 'root',
-            'slug' => '@root',
-            'parent_folder_id' => 0,
+            'slug' => '@root'
         ]);
+
+        \File::makeDirectory(public_path('documents/'.$user->slug));
+
+        $folder->parent_folder_id = $folder->id;
+
+         \File::makeDirectory(public_path('documents/'.$user->slug.'/@root'));
+
+        $folder->save();
 
         return $user;
     }

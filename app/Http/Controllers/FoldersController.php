@@ -51,6 +51,7 @@ class FoldersController extends Controller
                 'name' => $folder_name
             ]);
 
+            // dd(current_folder_path(Folder::find($parent_folder_id)));
 
 
             \File::makeDirectory(public_path('documents/'.$request->user()->slug.'/'.current_folder_path(Folder::find($parent_folder_id)).$folder_slug));
@@ -64,7 +65,7 @@ class FoldersController extends Controller
         return response()->json([
             'message' => 'Folder created correctly',
             'description' => 'A folder with the name '.$folder_name.' was created correctly'
-        ], 201); 
+        ], 201);
     }
 
     /**
@@ -111,7 +112,7 @@ class FoldersController extends Controller
 
         try {
 
-            $folder->save();    
+            $folder->save();
 
             $new_path = 'documents/'.$folder->user()->first()->slug.'/'.current_folder_path(Folder::find($folder->parent_folder_id)).$folder->slug;
 
@@ -133,7 +134,7 @@ class FoldersController extends Controller
         return response()->json([
             'message' => 'Folder updated correctly',
             'description' => 'Folder updated correctly'
-        ], 201); 
+        ], 201);
     }
 
     /**
@@ -144,7 +145,7 @@ class FoldersController extends Controller
      */
     public function destroy($id)
     {
-        $folder = Folder::find($id);  
+        $folder = Folder::find($id);
 
         try {
             \File::deleteDirectory(public_path('documents/'.$folder->user()->first()->slug.'/'.current_folder_path($folder)));
@@ -158,6 +159,6 @@ class FoldersController extends Controller
         return response()->json([
             'message' => 'Folder deleted correctly',
             'description' => 'Folder deleted correctly'
-        ], 201); 
+        ], 201);
     }
 }

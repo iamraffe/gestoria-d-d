@@ -64,7 +64,7 @@ class UsersController extends Controller
     {
         $user = User::find($id);
         $current_folder = $user->folders()->first();
-        $child_folders = $current_folder->folders()->get();
+        $child_folders = child_folders($current_folder);
         $this->authorize('show-user', $user);
         return view('users.show', compact('user', 'current_folder', 'child_folders'));
     }
