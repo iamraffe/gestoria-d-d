@@ -65,7 +65,7 @@ body {
 @media only screen and (max-width: 500px) {
     .Direccion{
         display:none;
-    } 
+    }
 }
 
 .Boton-Cliente{
@@ -88,7 +88,7 @@ body {
 @media only screen and (max-width: 500px) {
     .LogoGA{
         display:none;
-    } 
+    }
 }
 
 
@@ -5407,7 +5407,7 @@ tbody.collapse.in {
   border-top: 1px solid transparent;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
   -webkit-overflow-scrolling: touch;
-  
+
 max-width:1200px;
 margin:0 auto;
 }
@@ -8884,7 +8884,7 @@ footer .footer-below {
 }
 
 .navbar-nav {
-  
+
   padding-top: 5px;
 
 }
@@ -9141,23 +9141,23 @@ footer#main-footer {
   margin-top: 75px;
 }
 
-#main-dashboard aside.sidebar ul li a {    
-  text-align: left;   
-  font-weight: bold;    
-  text-transform: uppercase;    
-  letter-spacing: 1px;    
+#main-dashboard aside.sidebar ul li a {
+  text-align: left;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   font-size: 10px;
-}   
-    
-#main-dashboard aside.sidebar ul li.active a {    
-  color: #8c1d2b;   
-}   
-    
-.dropbox {    
-  min-height: 600px;    
-  border: 3px solid lighten(#8c1d2b, 55%);    
-  border-radius: 5px;   
-  padding-top:25px;  
+}
+
+#main-dashboard aside.sidebar ul li.active a {
+  color: #8c1d2b;
+}
+
+.dropbox {
+  min-height: 600px;
+  border: 3px solid lighten(#8c1d2b, 55%);
+  border-radius: 5px;
+  padding-top:25px;
 
   h2{
     margin-left: 25px;
@@ -9167,8 +9167,61 @@ footer#main-footer {
   hr{
 
   }
-}     
+}
 
 .delete-file{
   outline: none;
+}
+
+.username-sidebar{
+  font-size: 8px;
+  margin-left: 15px;
+  font-weight: bold;
+}
+
+#edit-user{
+  *{
+    box-sizing: border-box;
+  }
+  button, a{
+    outline: none;
+  }
+  .modal-body{
+    *{
+      font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+
+    padding-top: 0;
+    padding-bottom: 0;
+    min-height: 250px;
+
+    .collapse-section{
+      margin: 25px;
+
+      .collapse{
+        margin-top: 15px;
+      }
+    }
+    .nav-tabs{
+      display: flex;
+
+      > li{
+        flex: 1;
+        text-align: center;
+      }
+    }
+    .tab-content{
+      // margin-top: 25px;
+    }
+  }
+
+  .table-user-information{
+    td.row-title{
+      font-weight: 100;
+      color: #a0a0a2;
+    }
+    .btn{
+      padding: 0;
+    }
+  }
 }

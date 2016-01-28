@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\User;
+use App\Folder;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
@@ -17,7 +18,7 @@ class UsersController extends Controller
     public function __construct()
     {
 
-        $this->middleware('admin', ['except' => 'show']);
+        $this->middleware('admin', ['except' => ['show', 'update']]);
     }
 
     /**
@@ -86,9 +87,49 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $slug, $id)
     {
-        //
+        $user = User::find($id);
+
+        $this->authorize('show-user', $user);
+
+        if($request->password && $request->password_confirmation){
+            $this->validate($request, [
+                    'password' => 'required|confirmed',
+            ]);
+
+            $credentials = $request->only(
+                    'name', 'email', 'password', 'password_confirmation'
+            );
+
+            $user->password = bcrypt($credentials['password']);
+        }
+
+        $old_path = 'documents/'.$user->slug;
+
+        $user->name = $request->name;
+
+        $user->slug = '@'.str_slug($request->name);
+
+        // $user->email = $request->email;
+
+        $user->save();
+
+        $folders = $user->folders()->get();
+
+        $folders->each(function ($folder, $key) use ($user){
+            if($folder->parent_folder_id > 0){
+                $new_path = 'documents/'.$user->slug.'/'.current_folder_path(Folder::find($folder->parent_folder_id)).$folder->slug;
+                $folder->files()->get()->each(function($file, $key) use ($new_path){
+                    $file->path = $new_path.'/'.$file->name_on_disk;
+                    $file->save();
+                });
+            }
+        });
+
+        \File::move(public_path($old_path), public_path('documents/'.$user->slug));
+
+        return redirect('/dashboard/users/'.$user->slug.'/'.$user->id);
     }
 
     /**
@@ -97,8 +138,37 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($slug, $id)
     {
-        //
+        $user = User::findOrFail($id);
+
+        try {
+            \File::deleteDirectory(public_path('documents/'.$user->slug));
+            $user->delete();
+        }catch(\Exception $e){
+            return response()->json([
+                'message' => 'User was not deleted',
+                'description' => $e->getMessage()
+            ], 403);
+        }
+        return redirect('/dashboard/users/'.$user->slug.'/'.$user->id);
+        // return response()->json([
+        //     'message' => 'User deleted correctly',
+        //     'description' => 'User deleted correctly'
+        // ], 201);
+    }
+
+    public function password_reset(Request $request)
+    {
+            $this->validate($request, [
+                    'password' => 'required|confirmed',
+            ]);
+            $credentials = $request->only(
+                    'password', 'password_confirmation'
+            );
+            $user = \Auth::user();
+            $user->password = bcrypt($credentials['password']);
+            $user->save();
+            return redirect('/dashboard/users/');
     }
 }

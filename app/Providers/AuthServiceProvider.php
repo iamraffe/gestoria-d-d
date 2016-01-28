@@ -33,5 +33,9 @@ class AuthServiceProvider extends ServiceProvider
         $gate->define('show-user', function($user, $user_to_show){
             return $user->id == $user_to_show->id || $user->admin;
         });
+
+        $gate->define('edit-user', function($user, $user_to_show){
+            return $user->id == $user_to_show->id || $user->admin;
+        });
     }
 }

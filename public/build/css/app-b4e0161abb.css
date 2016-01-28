@@ -9160,3 +9160,58 @@ footer#main-footer {
 .delete-file {
   outline: none;
 }
+
+.username-sidebar {
+  font-size: 8px;
+  margin-left: 15px;
+  font-weight: bold;
+}
+
+#edit-user * {
+  box-sizing: border-box;
+}
+
+#edit-user button,
+#edit-user a {
+  outline: none;
+}
+
+#edit-user .modal-body {
+  padding-top: 0;
+  padding-bottom: 0;
+  min-height: 250px;
+}
+
+#edit-user .modal-body * {
+  font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+#edit-user .modal-body .collapse-section {
+  margin: 25px;
+}
+
+#edit-user .modal-body .collapse-section .collapse {
+  margin-top: 15px;
+}
+
+#edit-user .modal-body .nav-tabs {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#edit-user .modal-body .nav-tabs > li {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: center;
+}
+
+#edit-user .table-user-information td.row-title {
+  font-weight: 100;
+  color: #a0a0a2;
+}
+
+#edit-user .table-user-information .btn {
+  padding: 0;
+}

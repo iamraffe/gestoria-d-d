@@ -1,7 +1,7 @@
 @extends('dashboard')
 
 @section('content')
-<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+      <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
             <tr>
                 <th>Nombre</th>
@@ -34,7 +34,13 @@
                   @endif
                 </td>
                 <td>
-                  <a href="{{ url('/dashboard/'.$user->slug.'/'.$user->id) }}" class="btn btn-app"><span class="fa fa-eye"></span></a>
+                  <button href="{{ url('/dashboard/users/'.$user->slug.'/'.$user->id) }}" class="btn btn-app btn-lg"><span class="fa fa-eye"></span></button>
+                  <button href="#" class="btn btn-app btn-lg" data-toggle="modal" data-target="#edit-user-modal"><span class="fa fa-pencil"></span></button>
+                  <form action="{{ '/dashboard/users/'.$user->slug.'/'.$user->id }}" method="POST">
+                      {{ csrf_field() }}
+                      <input type="hidden" name="_method" value="DELETE">
+                      <button type="submit" class="btn btn-app btn-lg"><span class="fa fa-times"></span></button>
+                  </form>
                 </td>
             </tr>
           @endforeach

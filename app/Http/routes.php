@@ -46,6 +46,8 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
   Route::get('/', 'DashboardController@index');
 
   Route::get('/users', 'UsersController@index');
+  Route::put('/users/{slug}/{id}', 'UsersController@update');
+  Route::delete('/users/{slug}/{id}', 'UsersController@destroy');
 
   Route::delete('/files/{id}', 'FilesController@destroy');
   Route::put('/files/{id}', 'FilesController@update');
@@ -53,7 +55,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
   Route::delete('/folders/{id}', 'FoldersController@destroy');
   Route::put('/folders/{id}', 'FoldersController@update');
 
-  Route::group(['prefix' => '{slug}/{id}'], function () {
+  Route::group(['prefix' => 'users/{slug}/{id}'], function () {
 
     Route::get('/', 'UsersController@show');
     Route::post('/files', 'FilesController@store');
