@@ -3,7 +3,7 @@
 @section('content')
   @include('partials._modals')
   <ul class="breadcrumb">
-      <li class="active"><a href="{{ url('/dashboard/'.$user->slug.'/'.$user->id) }}"><span class="fa fa-home"></span> Inicio</a></li>
+      <li class="active"><a href="{{ url('/dashboard/users/'.$user->slug.'/'.$user->id) }}"><span class="fa fa-home"></span> Inicio</a></li>
   </ul>
   <div class="dropbox">
   @if($child_folders->count() != 0)

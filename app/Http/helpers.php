@@ -42,7 +42,7 @@ function current_folder_breadcrumb_path($user, $folder){
     $folder = Folder::find($folder->parent_folder_id);
   }
 
-  $path = '<li><a href="'.url('/dashboard/'.$user->slug.'/'.$user->id).'"><span class="fa fa-home"></span> Inicio</a></li>'.$path;
+  $path = '<li><a href="'.url('/dashboard/users/'.$user->slug.'/'.$user->id).'"><span class="fa fa-home"></span> Inicio</a></li>'.$path;
 
   return $path;
 }
