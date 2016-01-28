@@ -1,6 +1,7 @@
 @extends('dashboard')
 
 @section('content')
+  @include('partials._modals')
   <ul class="breadcrumb">
       <li class="active"><a href="{{ url('/dashboard/'.$user->slug.'/'.$user->id) }}"><span class="fa fa-home"></span> Inicio</a></li>
   </ul>
@@ -24,7 +25,7 @@
                   </div>
               @endforeach
             </div>
-            
+
           </div>
       @endforeach
       <div class="row">
@@ -66,7 +67,7 @@
   </div>
 
 
-  
+
 @stop
 
 @section('scripts')

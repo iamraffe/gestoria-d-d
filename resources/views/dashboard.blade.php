@@ -19,35 +19,37 @@
         <link rel="icon" type="image/png" href="/img/mifavicon.png" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.2.0/dropzone.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/s/dt/dt-1.10.10,r-2.0.0,sc-1.4.0/datatables.min.css"/>
+
+
         <!-- SCRIPT CONTROL DE COOKIES -->
         <script type="text/javascript">
             function controlcookies() {
          // si variable no existe se crea (al clicar en Aceptar)
             localStorage.controlcookie = (localStorage.controlcookie || 0);
- 
+
             localStorage.controlcookie++; // incrementamos cuenta de la cookie
             cookie1.style.display='none'; // Esconde la política de cookies
             }
          </script>
     </head>
     <body id="page-top" class="index" style="position:relative;">
-        @include('partials._modals')
         <!--Código HTML de la política de cookies -->
-         
+
         <!--La URL incluida es la parte que se ha de modificar -->
-         
+
         <div class="cookiesms" id="cookie1">
-        Esta web utiliza cookies, puedes ver nuestra  <a href="cookies.html">la política de cookies, aquí</a> 
+        Esta web utiliza cookies, puedes ver nuestra  <a href="cookies.html">la política de cookies, aquí</a>
         Si continuas navegando estás aceptándola
         <button onclick="controlcookies()">Aceptar</button>
         <div  class="cookies2" onmouseover="document.getElementById('cookie1').style.bottom = '0px';">Política de cookies + </div>
         </div>
         <script type="text/javascript">
-        if (localStorage.controlcookie>0){ 
+        if (localStorage.controlcookie>0){
         document.getElementById('cookie1').style.bottom = '-50px';
         }
         </script>
-         
+
         <!-- Fin del código de cookies -->
 
         <section id="main-dashboard">
@@ -67,13 +69,12 @@
                 <div class="row">
                     @include('partials._footer')
                 </div>
-            </footer>    
+            </footer>
         </section>
 
         <script src="/js/libs.js"></script>
         <script src='https://www.google.com/recaptcha/api.js'></script>
-        {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.2.0/min/dropzone.min.js"></script> --}}
+        <script type="text/javascript" src="https://cdn.datatables.net/s/dt/dt-1.10.10,r-2.0.0,sc-1.4.0/datatables.min.js"></script>
         @yield('scripts')
-        {{-- <script src="/js/all.js"></script> --}}
     </body>
 </html>

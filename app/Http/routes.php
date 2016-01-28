@@ -42,29 +42,32 @@ Route::group(['prefix' => 'pdf'], function () {
   Route::get('show/{filename}', 'PDFsController@show');
 });
 
-Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {   
-  Route::get('/', 'DashboardController@index');    
+Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
+  Route::get('/', 'DashboardController@index');
+
+  Route::get('/users', 'UsersController@index');
+
   Route::delete('/files/{id}', 'FilesController@destroy');
   Route::put('/files/{id}', 'FilesController@update');
-  
+
   Route::delete('/folders/{id}', 'FoldersController@destroy');
   Route::put('/folders/{id}', 'FoldersController@update');
 
-  Route::group(['prefix' => '{slug}/{id}'], function () {    
+  Route::group(['prefix' => '{slug}/{id}'], function () {
 
     Route::get('/', 'UsersController@show');
     Route::post('/files', 'FilesController@store');
     Route::post('/folders', 'FoldersController@store');
 
-    Route::group(['prefix' => '/files/{file_slug}/{file_id}'], function () {   
-      Route::get('/', 'FilesController@show');    
+    Route::group(['prefix' => '/files/{file_slug}/{file_id}'], function () {
+      Route::get('/', 'FilesController@show');
     });
 
-    Route::group(['prefix' => '/folders/{folder_slug}/{folder_id}'], function () {   
-      Route::get('/', 'FoldersController@show');    
+    Route::group(['prefix' => '/folders/{folder_slug}/{folder_id}'], function () {
+      Route::get('/', 'FoldersController@show');
     });
 
-  });    
+  });
 
 });
 

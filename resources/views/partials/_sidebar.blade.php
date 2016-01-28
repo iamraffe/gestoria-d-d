@@ -6,6 +6,11 @@
     <li class="">
       <a href="#" class="btn btn-link btn-block" data-toggle="modal" data-target="#add-folder-modal"><span class="fa fa-plus"></span> Agregar carpeta</a>
     </li>
+    @if(\Auth::user()->admin)
+      <li class="">
+        <a href="{{ url('/dashboard/users') }}" class="btn btn-link btn-block"><span class="fa fa-users"></span> Ver usuarios</a>
+      </li>
+    @endif
     <li class="">
       <a href="{{ url('/auth/logout') }}" class="btn btn-link btn-block"><span class="fa fa-sign-out"></span> Cerrar sesión</a>
     </li>

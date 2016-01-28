@@ -1,6 +1,7 @@
 @extends('dashboard')
 
 @section('content')
+  @include('partials._modals')
   <ul class="breadcrumb">
       {{-- <li class="active"><a href="#"><span class="fa fa-home"></span> Inicio</a></li> --}}
       {!! current_folder_breadcrumb_path($user, $current_folder) !!}
@@ -25,7 +26,7 @@
                   </div>
               @endforeach
             </div>
-            
+
           </div>
       @endforeach
       <div class="row">
@@ -67,7 +68,7 @@
   </div>
 
 
-  
+
 @stop
 
 @section('scripts')

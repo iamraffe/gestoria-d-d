@@ -62,7 +62,7 @@ class FilesController extends Controller
            abort(403, "A file with this name already exists within this folder.");
         }
 
-        $file->move($file_path, $file_name_on_disk); 
+        $file->move($file_path, $file_name_on_disk);
 
         try {
             $request->user()->files()->create([
@@ -82,7 +82,7 @@ class FilesController extends Controller
         return response()->json([
             'message' => 'File created correctly',
             'description' => 'A file was uploaded and stored correctly at '.$complete_path
-        ], 201); 
+        ], 201);
     }
 
     /**
@@ -94,7 +94,7 @@ class FilesController extends Controller
     public function show($user_slug, $user_id, $file_slug, $file_id)
     {
         $file = File::findOrFail($file_id);
-
+        $this->authorize('show-file', $file);
         return Response::make(file_get_contents($file->path), 200, [
             'Content-Type' => 'application/pdf',
             'Content-Disposition' => 'inline; '.$file->name,
@@ -128,10 +128,10 @@ class FilesController extends Controller
         $file->name = $request->file_name;
 
         $file->slug = '@'.str_slug($request->file_name);
-        
+
         try {
 
-            $file->save();    
+            $file->save();
 
             // $new_path = public_path('documents/'.$folder->user()->first()->slug.'/'.current_folder_path(Folder::find($folder->parent_folder_id)).'/'.$folder->slug);
 
@@ -146,7 +146,7 @@ class FilesController extends Controller
         return response()->json([
             'message' => 'File updated correctly',
             'description' => 'File updated correctly'
-        ], 201); 
+        ], 201);
     }
 
     /**
@@ -157,7 +157,7 @@ class FilesController extends Controller
      */
     public function destroy($id)
     {
-        $file = File::find($id);   
+        $file = File::find($id);
         try {
             \File::delete(public_path($file->path));
             $file->delete();
@@ -170,6 +170,6 @@ class FilesController extends Controller
         return response()->json([
             'message' => 'File deleted correctly',
             'description' => 'File deleted correctly'
-        ], 201); 
+        ], 201);
     }
 }

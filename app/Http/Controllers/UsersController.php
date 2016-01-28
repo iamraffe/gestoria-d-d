@@ -9,6 +9,17 @@ use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
+    /*
+     * Instantiate a new UserController instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+
+        $this->middleware('admin', ['except' => 'show']);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +27,9 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::all();
+        $user = \Auth::user();
+        return view('users.index', compact('users'));
     }
 
     /**
@@ -47,10 +60,11 @@ class UsersController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($slug, $id)
-    {   
+    {
         $user = User::find($id);
         $current_folder = $user->folders()->first();
         $child_folders = $current_folder->folders()->get();
+        $this->authorize('show-user', $user);
         return view('users.show', compact('user', 'current_folder', 'child_folders'));
     }
 
