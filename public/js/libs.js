@@ -5405,7 +5405,7 @@ var ready;
 
 ready = function() {
  $("#my-awesome-dropzone").dropzone({ // The camelized version of the ID of the form element
-
+    dictDefaultMessage: "Haga click o arrastre los archivos que desea subir al servidor",
     // The configuration we've talked about above
     // autoProcessQueue: false,
     // previewsContainer: '.upload-preview',
@@ -5489,4 +5489,5 @@ $('#edit-folder-modal').on('hide.bs.modal', function (e) {
 $('#edit-file-modal').on('hide.bs.modal', function (e) {
   $('#edit-file').attr('action','');
 });
+
 //# sourceMappingURL=libs.js.map

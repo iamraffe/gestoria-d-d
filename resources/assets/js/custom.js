@@ -209,7 +209,7 @@ var ready;
 
 ready = function() {
  $("#my-awesome-dropzone").dropzone({ // The camelized version of the ID of the form element
-
+    dictDefaultMessage: "Haga click o arrastre los archivos que desea subir al servidor",
     // The configuration we've talked about above
     // autoProcessQueue: false,
     // previewsContainer: '.upload-preview',
