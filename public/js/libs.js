@@ -5490,4 +5490,21 @@ $('#edit-file-modal').on('hide.bs.modal', function (e) {
   $('#edit-file').attr('action','');
 });
 
+
+$('#privacy-check').on('change', function(){
+  if(document.getElementById('privacy-check').checked) {
+      $("#submit-contact-form").removeClass("disabled");
+  } else {
+      $("#submit-contact-form").addClass("disabled");
+  }
+});
+
+$("#contact-form").on('submit', function(e){
+  console.log($('#submit-contact-form').hasClass('disabled'));
+  if($('#submit-contact-form').hasClass('disabled')){
+    e.preventDefault();
+  }
+});
+
+console.log($('.g-recaptha-response'), $('[name=g-recaptha-response]'));
 //# sourceMappingURL=libs.js.map

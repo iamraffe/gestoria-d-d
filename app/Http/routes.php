@@ -8,7 +8,7 @@ Route::get('/empleadas-hogar', 'PagesController@empleadas_hogar');
 
 Route::get('/herencia', 'PagesController@herencia');
 
-Route::get('/contacto', 'PagesController@contacto');
+Route::post('/contacto', 'PagesController@contacto');
 
 Route::get('/terms-and-conditions', 'PagesController@terms_and_conditions');
 

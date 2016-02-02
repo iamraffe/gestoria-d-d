@@ -91,38 +91,49 @@
         
             <div class="container TopSpace2">
                     <div class="row">
+                        @if (count($errors) > 0)
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
                         <div class="col-md-6 TopSpace ">
                             <p class="TextoInterno"> Déjanos tus datos y el motivo de tu consulta y te atenderemos lo antes posible.<br/> Gracias. </p>
                             <div id="contact-form">
-                              <form action="">
+                              <form id="contact-form" action="{{ url('/contacto')  }}" method="POST">
+                                {{ csrf_field() }}
                                 <div class="form-group">
                                   <label for="">Nombre</label>
-                                  <input type="text" class="form-control" required>
+                                  <input type="text" class="form-control" name="nombre" required>
                                 </div>
                                 <div class="form-group">
                                   <label for="">Empresa</label>
-                                  <input type="text" class="form-control" required>
+                                  <input type="text" class="form-control" name="empresa" required>
                                 </div>
                                 <div class="form-group">
                                   <label for="">Teléfono</label>
-                                  <input type="text" class="form-control" required>
+                                  <input type="text" class="form-control" name="telefono" required>
                                 </div>
                                 <div class="form-group">
                                   <label for="">Email</label>
-                                  <input type="email" class="form-control" required>
+                                  <input type="email" class="form-control" name="email" required>
                                 </div>
                                 <div class="form-group">
-                                  <label for="">Comentario</label>
-                                  <textarea name="comments" id="" cols="30" rows="10" class="form-control" required></textarea>
+                                  <label for="">Comentarios</label>
+                                  <textarea name="comentarios" id="" cols="30" rows="10" class="form-control" required></textarea>
                                 </div>
                                 <div class="form-group">
                                   <div class="g-recaptcha" data-sitekey="6LdS1xITAAAAAFIymLngg1xUOxJuQO8VKZYd8ZV9"></div>
                                 </div>
                                 <div class="form-group">
-                                  <input type="checkbox"><span>Acepto la política de privacidad</span>
+                                  <input type="checkbox" id="privacy-check"><span>Acepto la política de privacidad</span>
                                 </div>
                                 <div class="form-group">
-                                  <button>Enviar</button>
+                                  <button id="submit-contact-form" type="submit" class="disabled btn btn-link">Enviar</button>
                                 </div>
                               </form>
                             </div>
