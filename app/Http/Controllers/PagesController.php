@@ -63,7 +63,7 @@ class PagesController extends Controller
                    function($message) use ($email, $name)
                     {
                       $message->from($email, $name);
-                      $message->to('raffe90@gmail.com', 'Gestoria DyD')->subject('Contacto [WEB]');
+                      $message->to('pcenamor@gestoriadyd.com', 'Gestoria DyD')->subject('Contacto [WEB]');
                     });
         return back();
     }
