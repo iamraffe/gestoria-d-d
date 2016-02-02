@@ -1,7 +1,7 @@
 <aside class="col-sm-2 sidebar">
   <ul class="list-unstyled">
     <li class="username-sidebar">
-      {{ \Auth::user()->name }} <a href="#" class="btn btn-link" data-toggle="modal" data-target="#edit-user-modal"><span class="fa fa-pencil" class="edit-user"></span></a>
+      {{ $user->name }} <a href="#" class="btn btn-link" data-toggle="modal" data-target="#edit-user-modal"><span class="fa fa-pencil" class="edit-user"></span></a>
     </li>
     @if(isset($current_folder))
       <li class="">
